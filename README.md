@@ -9,7 +9,6 @@ Write your own printf function.
 
 # Information
 
-In this project we need to write a function that works similar to the original function printf in 'C', for to do this task first we start for understand the function and how printf does this function we make a very basic flowchart with the things that we believe that printf does, after that we started for writing all the functions that we use later and creating the header file with all the libraries and prototypes that we use in the program.
 
 ## Files:
  Add files
