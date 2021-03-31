@@ -18,8 +18,8 @@ In this project we need to write a function that works similar to the original f
 
 -   Clone this [repository](https://github.com/Miguel22247/simple_shell/)
 -   move the file main.c that it's in test folder to printf folder `mv test/main.c /simple_shell/`
--   use  `$ gcc -Wall -Werror -Wextra -pedantic *.c`
--   run with ./a.out (is the default output)
+-   use  `gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
+-   run with ./hsh
 
 ## Flowchart
 
@@ -32,11 +32,11 @@ Betty Code Style
 
    Write a README
    Write a man for your shell.
-   You should have an AUTHORS file at the root of your repository, listing all individuals having contributed content to the repository. Format, see Docker
+   You should have an AUTHORS file at the root of your repository, listing all individuals having contributed content to the repository. Format, see [Docker](https://intranet.hbtn.io/rltoken/xvzr_eas4Z83gL3Fp0slag)
   
 # Authors
 
-[Jorge Tuset](https://github.com/jtusetgraniello) and [Miguel Pacheco](https://github.com/Miguel22247) | Cohort 14 | Holberton School
+[Clara Berriel](https://github.com/jtusetgraniello), [Pichu Otegui](https://github.com/pichu185) and [Miguel Pacheco](https://github.com/Miguel22247) | Cohort 14 | Holberton School
 
 # Copyright
 
