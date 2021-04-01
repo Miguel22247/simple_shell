@@ -20,5 +20,6 @@
 
 /*for print*/
 int _putchar(char c);
+int shell();
 
 #endif
