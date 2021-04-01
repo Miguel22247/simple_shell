@@ -17,6 +17,9 @@
 #define BUFSIZE 1024
 
 /*funcions*/
+/*main function*/
+
+int shell();
 
 /*for print*/
 int _putchar(char c);
