@@ -1,42 +1,42 @@
+# README for simple_shell project
+## Compilation
+All files in this repository should be compiled in the following way:
 
-# README for simple_shell project repository
+´´´gcc -Wall -Werror -Wextra -pedantic *.c -o hsh´´´
+Project requirements.
+Allowed editors: ´´´vi, vim, emacs´´´.
+All files will be compiled on Ubuntu 14.04 LTS.
+Your C programs and functions will be compiled with gcc 4.8.4 using the flags -Wall -Werror -Wextra and -pedantic.
+All your files should end with a new line.
+A ´´´README.md´´´ file, at the root of the folder of the project is mandatory.
+Your code should use the Betty style. It will be checked using ´´´betty-style.pl´´´ and ´´´betty-doc.pl´´´.
+Your shell should not have any memory leaks.
+No more than 5 functions per file.
+All your header files should be include guarded.
+Use system calls only when you need to.
+Usage
+Once executed, the compiled file will bring up a prompt that executes built-in commands with arguments.
 
-This repository contains our simple shell for holberton.
-
-Project: 0x16. C - Simple Shell
-
-Write your own printf function.
-
-# Information
+´´´./hsh
+($) ls -l´´´
+## Exit
 
 
-## Files:
- Add files
+## Files
+Every file contains the functions that will be used to work with the main file: 
 
-## How to test the "simple shell"
+* shell.h: header file.
 
--   Clone this [repository](https://github.com/Miguel22247/simple_shell/)
--   move the file main.c that it's in test folder to printf folder `mv test/main.c /simple_shell/`
--   use  `gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
--   run with ./hsh
 
-## Flowchart
+## Bugs
+Not known yet
 
-# Code Style
+## Authors
+This program was written by:
 
-Betty Code Style
- 
-# Tasks done
-  ### 0. README, man, AUTHORS
+* Clara Berriel [claraberriel](https://github.com/claraberriel)
 
-   Write a README
-   Write a man for your shell.
-   You should have an AUTHORS file at the root of your repository, listing all individuals having contributed content to the repository. Format, see [Docker](https://intranet.hbtn.io/rltoken/xvzr_eas4Z83gL3Fp0slag)
-  
-# Authors
+* Pichu Otegui: [Pichu185](https://github.com/pichu185)
 
-[Clara Berriel](https://github.com/jtusetgraniello), [Pichu Otegui](https://github.com/pichu185) and [Miguel Pacheco](https://github.com/Miguel22247) | Cohort 14 | Holberton School
+* Miguel Pacheco [Miguel22247](https://github.com/Miguel22247)
 
-# Copyright
-
-Clara Berriel, Pichu Otegui and Miguel Pacheco &copy; 2021 | All Rights Reserved
