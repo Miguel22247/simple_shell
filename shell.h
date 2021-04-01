@@ -9,7 +9,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <linux/limits.h>
 
+/* Constants */
+#define PROMPT "$ "
+#define PATH_MAX 4096
+#define BUFSIZE 1024
 
 /*funcions*/
 
