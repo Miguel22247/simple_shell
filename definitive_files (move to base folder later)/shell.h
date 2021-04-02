@@ -13,5 +13,8 @@
 
 /*Functions*/
 
+/*for init the shell*/
+void start_shell();
 
+/*for ended the shell*/
 #endif
