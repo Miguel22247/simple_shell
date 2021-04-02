@@ -21,8 +21,5 @@
 /*main function*/
 int main(char argc, char **argv);
 
-/*for print*/
-int _putchar(char c);
-
 
 #endif
