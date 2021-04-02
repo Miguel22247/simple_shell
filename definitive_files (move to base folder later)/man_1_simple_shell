@@ -1,0 +1,25 @@
+.TH man 1 "31 March 2021" "0.1 Beta version" "simple_shell man page"
+.SH NAME
+
+.B simple_shell man page
+
+.SH SYNOPSIS
+.B Use: _printf [format] [argument] ...
+
+.B Prototype:
+int _printf(const char * format, ...);
+
+.SH DESCRIPTION
+simple_shell tries to reproduce the original shell
+
+.SH SEE ALSO
+.B man 3 printf (printf man page)
+
+.SH BUGS
+NO BUGS :)
+
+.SH AUTHOR
+Clara Berriel, Pichu Otegui y Miguel Pacheco - Holberton School Cohort 14
+
+.SH COPYRIGHT
+Clara Berriel, Pichu Otegui y Miguel Pacheco - Holberton School Cohort 14 | Montevideo Campus | All rights reserved
