@@ -20,7 +20,7 @@
 /*Functions*/
 
 /*for init the shell*/
-int main(int ac __attribute__((unused)), char **av __attribute__((unused)))
+int main(int ac __attribute__((unused)), char **av __attribute__((unused)));
 
 
 /*for ended the shell*/
