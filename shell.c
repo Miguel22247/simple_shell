@@ -11,7 +11,7 @@ int main(char argc, char **argv) {
     char current_path[PATH_MAX];
     getcwd(current_path, sizeof(current_path));
     
-    printf("$ \n");
+    printf("%s $ \n", current_path);
     /* create buffer to store input
     buffer = malloc(BUFSIZE * sizeof(char)); */
 

@@ -19,7 +19,12 @@
 /*functions*/
 
 /*main function*/
-int main(char argc, char *argv[]);
+int main(int argc, char *argv[]);
+
+/* auxiliar functions */
+int _strlen(char *s);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+
 /*for print*/
 int _putchar(char c);
 
