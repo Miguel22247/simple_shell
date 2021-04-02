@@ -1,17 +1,40 @@
 #include "shell.h"
 
 /**
- * main - Entry point
- * @argc: abc
- * @argv: def
+ * _strlen - length of a string
+ * @s: pointer to string
+ * Return: length of string
+ */
+
+int _strlen(char *s)
+{
+int str = 0;
+
+while (s[str] != '\0')
+{
+str++;
+}
+return (str);
+}
+
+
+/**
+ * _printf - Entry point
+ * @argc: arguments passed
+ * @argv: pointer to argc
  * Return: Always 0
  */
 
-int main(int argc, char *argv[])
+int _printf(int argc, char *argv[])
 {
-	int i;
+	int i, len;
+    char c = '\n';
 
 	for (i = 0; i < argc; i++)
-		/* printf("%s\n", argv[i]); */
+    {
+       len = _strlen(argv[i]);
+        write(STDOUT_FILENO, argv[i], len);
+        write(STDOUT_FILENO, &c, 1);
+    }
 	return (0);
 }
