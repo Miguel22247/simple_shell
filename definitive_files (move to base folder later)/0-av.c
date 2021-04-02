@@ -19,13 +19,13 @@ return (str);
 
 
 /**
- * _printf - Entry point
+ * _puts - Entry point
  * @argc: abc
  * @argv: def
  * Return: Always 0
  */
 
-int _prinft(int argc, char *argv[])
+int _puts(int argc, char *argv[])
 {
 	int i, len;
     char c = '\n';
