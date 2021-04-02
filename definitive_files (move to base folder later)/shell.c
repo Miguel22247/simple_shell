@@ -30,6 +30,6 @@ void start_shell() {
 	{
 		current_path = getcwd(buffer, BUFSIZE);
 		prompt = _strcat(current_path, PROMPT)
-		_putchar(prompt);
+		_putchar(PROMPT);
 	}
 }
