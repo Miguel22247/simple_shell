@@ -19,7 +19,7 @@ while (dest[count] != '\0')
 }
 
 /*
-* start_shell
+* start_shell -sknskn
 *
 */
 
@@ -29,7 +29,7 @@ void start_shell() {
 	while (1)
 	{
 		current_path = getcwd(buffer, BUFSIZE);
-		prompt = _strcat(current_path, PROMPT)
+		prompt = _strcat(current_path, PROMPT);
 		_putchar(prompt);
 	}
 }
