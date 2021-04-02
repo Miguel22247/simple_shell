@@ -23,13 +23,9 @@ while (dest[count] != '\0')
 *
 */
 
-void start_shell() {
-	char *current_path[], *buffer, *prompt;
-
-	while (1)
-	{
-		current_path = getcwd(buffer, BUFSIZE);
-		prompt = _strcat(current_path, PROMPT);
-		_putchar(prompt);
-	}
+void printDir()
+{
+    char cwd[1024];
+    getcwd(cwd, sizeof(cwd));
+    printf("\nDir: %s", cwd);
 }
