@@ -17,14 +17,15 @@ str++;
 return (str);
 }
 
+
 /**
- * main - Entry point
+ * _printf - Entry point
  * @argc: abc
  * @argv: def
  * Return: Always 0
  */
 
-int main(int argc, char *argv[])
+int _prinft(int argc, char *argv[])
 {
 	int i, len;
     char c = '\n';
