@@ -8,13 +8,13 @@
 int main(int ac __attribute__((unused)), char **av __attribute__((unused)))
 {
 	int int_mode;
-
+	char *prompt; 
 	while (int_mode)
 	{
 		int_mode = isatty(STDIN_FILENO);
 		if (int_mode == 1)
-			write(STDOUT_FILENO, PROMPT, 13);
+			prompt = write(STDOUT_FILENO, PROMPT, 13);
 	}
-	return (0);
+	return (prompt);
 /* The code continues below */
 }
