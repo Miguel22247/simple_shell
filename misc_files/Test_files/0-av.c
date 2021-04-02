@@ -19,20 +19,20 @@ return (str);
 
 
 /**
- * _printf - Entry point
- * @argc: arguments passed
- * @argv: pointer to argc
+ * main - Entry point
+ * @argc: abc
+ * @argv: def
  * Return: Always 0
  */
 
-int _printf(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int i, len;
     char c = '\n';
 
 	for (i = 0; i < argc; i++)
     {
-       len = _strlen(argv[i]);
+        len = _strlen(argv[i]);
         write(STDOUT_FILENO, argv[i], len);
         write(STDOUT_FILENO, &c, 1);
     }
