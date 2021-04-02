@@ -15,6 +15,6 @@ int main(int ac __attribute__((unused)), char **av __attribute__((unused)))
 		if (int_mode == 1)
 			write(STDOUT_FILENO, PROMPT, 13);
 	}
-	
+	return ()
 /* The code continues below */
 }
