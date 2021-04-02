@@ -20,7 +20,7 @@
 /*Functions*/
 
 /*for init the shell*/
-void printDir();
+void start_shell();
 
 /*for ended the shell*/
 #endif
