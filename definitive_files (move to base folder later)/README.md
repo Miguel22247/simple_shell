@@ -42,4 +42,3 @@ This program was written by:
 * Pichu Otegui: [Pichu185](https://github.com/pichu185)
 
 * Miguel Pacheco [Miguel22247](https://github.com/Miguel22247)
-
