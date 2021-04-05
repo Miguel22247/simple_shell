@@ -6,5 +6,5 @@
  */
 int main(void)
 {
-	write(1, "(mcpshell) \n", 4);
+	write(1, "(mcpshell) ", 10);
 }
