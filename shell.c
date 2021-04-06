@@ -1,19 +1,18 @@
 #include "shell.h"
-
 /**
-* main - makes interact as a shell
-* @variable: is a variable
-* Return: 0 if success
-*/
+ * main - entry point
+ * 
+ * Return: 0
+ */
+int main(void)
+{
+	char *line;
+	size_t len;
 
-int main(char argc, char **argv) {
-   /* char *buffer; */
-    char current_path[PATH_MAX];
-    getcwd(current_path, sizeof(current_path));
-    
-    printf("%s $ \n", current_path);
-    /* create buffer to store input
-    buffer = malloc(BUFSIZE * sizeof(char)); */
-
-    return (0);
+	while (1)
+	{
+	write(1, "(mcpshell) ", 10);
+	getline(&line, &len, stdin);
+	}
 }
+
