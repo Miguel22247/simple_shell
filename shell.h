@@ -18,7 +18,7 @@
 /*functions*/
 
 /*main function*/
-int main(char argc, char **argv);
+int main(void);
 
 
 #endif
