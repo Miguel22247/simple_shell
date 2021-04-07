@@ -37,7 +37,7 @@ void free(char *line, char **argv)
 
 char space_counter(char *line)
 {
-	int i; count = 0;
+	int i, count = 0;
 
 		for (i = 0; line[i] != '\0'; i++)
 		{
@@ -46,5 +46,3 @@ char space_counter(char *line)
 		}
 		return(count);
 }
-
-space_counter('hola mundo loco')

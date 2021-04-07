@@ -9,7 +9,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <linux/limits.h>
 
 /* Constants
 #define PATH_MAX 4096
@@ -19,7 +18,18 @@
 
 /*main function*/
 int shell(void);
+
 /*for exit the hash*/
 int exit_hash(ssize_t endof, char *argv);
+
+/*String Functions*/
+int _strlen(char *s);
+int _strcmp(char *s1, char *s2);
+int _putchar(char c);
+
+/*aux functions*/
+void free(char *line, char **argv);
+char *space_counter(char *line);
+
 
 #endif
