@@ -4,11 +4,10 @@
  * 
  * Return: 0
  */
-int shell(void)
+int shell(char argc __attribute__ ((unused)), char *argv[])
 {
 	char *line;
 	size_t len;
-	ssize_t endof = 0;
 	int read;
 	char**argv = NULL;
 
@@ -17,11 +16,14 @@ int shell(void)
 		if(isatty(STDIN_FILENO))
 			write(1, "(mcpshell) ", 10);
 		read = getline(&line, &len, stdin);
-		if ((exit_hash(endof, argv)) == 0)
+		
+		/*if (read == EOF)
 		{
-			break;
-		}
+			exit(EXIT_SUCCESS);
+		}*/
+
+		if (_strcmp(argv[0], "exit") == 0)|| /* o control/command + D*/read == EOF)
+			return (0); 
 	}
 	return (0);
 }
-

@@ -52,3 +52,43 @@ char space_counter(char *line)
 		}
 		return(count);
 }
+
+/**
+ * parser - Buidls an array of strings as arguments
+ * @input: Command input given by the user
+ *
+ * Return: Array of strings
+*/
+char **parser(char *input)
+{
+	int i, arg_count = 0;
+	char **args;
+	char *token, *tkn_ptr, *delimiter = " ";
+	char *str_copy;
+
+	if (input == NULL)
+		perror("Error while parsing the command\n", 100); /* check man perror*/
+
+	/* Count the number of arguments present in the input */
+	arg_count = space_counter(input) + 1;
+	/* Allocate memory to hold eaach argument as a string */
+	args = malloc(sizeof(char *) * args_count;
+	/* Store each argument as a string */
+	str_copy = _strdup(input);
+	tkn_ptr = str_copy;
+	for (i = 0; i < arg_count; i++)
+	{
+		token = _strdup(tkn_ptr, delimiter);
+		if (token == NULL)
+			break;
+		tkn_ptr = NULL;
+		/* store command as single string */
+		args[i] = _strdup(token);
+	}
+	/* set the last element of array of arguments to NULL */
+	args[i] = NULL;
+
+	free(str_copy);
+
+	return (args);
+}
