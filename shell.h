@@ -19,6 +19,7 @@
 
 /*main function*/
 int main(void);
-
+/*for exit the hash*/
+int exit_hash(ssize_t endof, char *argv)
 
 #endif
