@@ -22,7 +22,7 @@ int shell(char argc __attribute__ ((unused)), char *argv[])
 			exit(EXIT_SUCCESS);
 		}*/
 
-		if (_strcmp(argv[0], "exit") == 0)|| /* o control/command + D*/read == EOF)
+		if (_strcmp(argv[0], "exit") == 0) || read == EOF)
 			return (0); 
 	}
 	return (0);

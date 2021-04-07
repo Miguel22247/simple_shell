@@ -78,7 +78,7 @@ char **parser(char *input)
 	/* Store each argument as a string */
 	str_copy = _strdup(input);
 	tkn_ptr = str_copy;
-	
+
 	for (i = 0; i < arg_count; i++)
 	{
 		token = _strdup(tkn_ptr, delimiter);
