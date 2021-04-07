@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * exit_hash - Function tha handles different cases where the user want to exit
+ * exit_hash - Function tha handles different cases where the user wants to exit
  * @endof: eof
  * @argv: command
  * Return: 0
