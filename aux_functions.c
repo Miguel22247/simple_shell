@@ -28,3 +28,23 @@ void free(char *line, char **argv)
 	line = NULL;
 	free(argv);
 }
+
+/*
+* space_counter - count the spaces between words in the line
+* @line: input
+* Return: the count of spaces
+*/
+
+char space_counter(char *line)
+{
+	int i; count = 0;
+
+		for (i = 0; line[i] != '\0'; i++)
+		{
+			if (line[i] == ' ')
+				count++;
+		}
+		return(count);
+}
+
+space_counter('hola mundo loco')
