@@ -4,24 +4,24 @@
  * 
  * Return: 0
  */
-int main(void)
+int shell(void)
 {
 	char *line;
 	size_t len;
-	char *command;
-	char str[6] = {"exit"};
+	int read;
 
 	while (1)
 	{
 		write(1, "(mcpshell) ", 10);
-		command = getline(&line, &len, stdin);
+		read = getline(&line, &len, stdin);
 	
-		if(command == str)
+		if(read == EOF)
 		{
-			_putchar('\n');
-			return (0);
-			/* write(1, '\n', 1);
-			return (0); */
+			exit(0);
+		}
+		if(read == "exit")
+		{
+			exit(0);
 		}
 	}
 	return (0);
