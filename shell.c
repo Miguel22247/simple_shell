@@ -13,7 +13,7 @@ int main(void)
 	{
 		write(1, "(mcpshell) ", 10);
 		getline(&line, &len, stdin);
-		free(argv);
+		/*free(argv); */
 	}
 	return (0);
 }

@@ -21,14 +21,14 @@ int exit_hash(ssize_t endof, char *argv)
  * @line: eof
  * @argv:
  * Return: void
- */
+
 void free(char *line, char **argv)
 {
 	free(line);
 	line = NULL;
 	free(argv);
 }
-
+ */
 /*
 * space_counter - count the spaces between words in the line
 * @line: input
