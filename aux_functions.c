@@ -16,6 +16,11 @@ int exit_hash(ssize_t endof, char *argv)
 		return (0);
 	return (1);
 }
+
+/* idea para exit fun
+if (comando == "exit")
+	exit(EXIT_SUCCESS); */
+
 /**
  * free - Sets some variables to frees allocs
  * @line: eof
@@ -30,6 +35,7 @@ void free(char *line, char **argv)
 }
  */
 /*
+
 * space_counter - count the spaces between words in the line
 * @line: input
 * Return: the count of spaces
