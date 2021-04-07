@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  * exit_hash - Function tha handles different cases where the user want to exit
  * @endof: eof
@@ -8,12 +7,16 @@
  */
 int exit_hash(ssize_t endof, char *argv)
 {
-	if (endof == EOF)
+	if (eof == EOF)
 	{
-		write(1, '\n', 2);
-		return(0);
+		_putchar('\n');
+		return (0);
 	}
+	if (_strcmp(argv0, "exit") == 0)
+		return (0);
+	return (1);
 }
+
 /**
  * main - entry point
  * 
