@@ -8,12 +8,18 @@ int main(void)
 {
 	char *line;
 	size_t len;
+	char *command;
 
 	while (1)
 	{
 		write(1, "(mcpshell) ", 10);
 		getline(&line, &len, stdin);
-		/*free(argv); */
+	
+		if(command == EOF || command == 'exit')
+		{
+			write(1, '\n', 1);
+			return (0);
+		}
 	}
 	return (0);
 }
