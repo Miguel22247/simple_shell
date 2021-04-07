@@ -9,20 +9,17 @@ int shell(void)
 	char *line;
 	size_t len;
 	int read;
+	char str[6] = {"exit"};
 
 	while (1)
 	{
-		write(1, "(mcpshell) ", 10);
+		if(isatty(STDIN_FILENO))
+			write(1, "(mcpshell) ", 10);
 		read = getline(&line, &len, stdin);
-	
-		if(read == EOF)
-		{
-			exit(0);
-		}
-		if(read == "exit")
-		{
-			exit(0);
-		}
+	if ((exit_hash(eof, argv)) == 0)
+	{
+		break;
+	}
 	}
 	return (0);
 }
