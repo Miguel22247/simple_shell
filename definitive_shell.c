@@ -1,23 +1,5 @@
 #include "shell.h"
 /**
- * exit_hash - Function tha handles different cases where the user want to exit
- * @endof: eof
- * @argv: command
- * Return: 0
- */
-int exit_hash(ssize_t endof, char *argv0)
-{
-	if (endof == EOF)
-	{
-		write(1, '\n', 1);
-		return (0);
-	}
-	if (_strcmp(argv0, "exit") == 0)
-		return (0);
-	return (1);
-}
-
-/**
  * main - entry point
  * 
  * Return: 0

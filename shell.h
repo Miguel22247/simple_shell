@@ -11,15 +11,15 @@
 #include <string.h>
 #include <linux/limits.h>
 
-/* Constants */
+/* Constants
 #define PATH_MAX 4096
 #define BUFSIZE 1024
-
+ */
 /*functions*/
 
 /*main function*/
 int shell(void);
 /*for exit the hash*/
-int exit_hash(ssize_t endof, char *argv0);
+int exit_hash(ssize_t endof, char *argv);
 
 #endif
