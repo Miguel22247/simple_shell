@@ -27,8 +27,7 @@ int _strlen(char *s);
 int _strcmp(char *s1, char *s2);
 int _putchar(char c);
 
-/*aux functions
-void free(char *line, char **argv);*/
+/*aux functions*/
 char *space_counter(char *line);
 
 

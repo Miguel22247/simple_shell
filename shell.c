@@ -15,10 +15,11 @@ int main(void)
 		write(1, "(mcpshell) ", 10);
 		getline(&line, &len, stdin);
 	
-		if(command == EOF || command == 'exit')
+		if(command == 'exit')
 		{
-			write(1, '\n', 1);
-			return (0);
+			/* write(1, '\n', 1);
+			return (0); */
+			break;
 		}
 	}
 	return (0);
