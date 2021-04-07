@@ -14,13 +14,14 @@ int main(void)
 	while (1)
 	{
 		write(1, "(mcpshell) ", 10);
-		getline(&line, &len, stdin);
+		command = getline(&line, &len, stdin);
 	
 		if(command == str)
 		{
+			_putchar('\n');
+			return (0);
 			/* write(1, '\n', 1);
 			return (0); */
-			break;
 		}
 	}
 	return (0);
