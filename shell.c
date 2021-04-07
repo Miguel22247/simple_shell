@@ -8,6 +8,7 @@ int shell(void)
 {
 	char *line;
 	size_t len;
+	ssize_t endof = 0;
 	int read;
 	char**argv = NULL;
 
@@ -16,10 +17,10 @@ int shell(void)
 		if(isatty(STDIN_FILENO))
 			write(1, "(mcpshell) ", 10);
 		read = getline(&line, &len, stdin);
-	if ((exit_hash(endof, argv)) == 0)
-	{
-		break;
-	}
+		if ((exit_hash(endof, argv)) == 0)
+		{
+			break;
+		}
 	}
 	return (0);
 }
