@@ -5,11 +5,11 @@
  * @argv: command
  * Return: 0
  */
-int exit_hash(ssize_t endof, char *argv)
+int exit_hash(ssize_t endof, char *argv0)
 {
-	if (eof == EOF)
+	if (endof == EOF)
 	{
-		_putchar('\n');
+		write(1, '\n', 1);
 		return (0);
 	}
 	if (_strcmp(argv0, "exit") == 0)
@@ -22,7 +22,7 @@ int exit_hash(ssize_t endof, char *argv)
  * 
  * Return: 0
  */
-int main(void)
+int shell(void)
 {
 	char *line;
 	size_t len;
