@@ -39,16 +39,13 @@ int prompt(int n)
  */
 int shell(void)
 {
-	size_t len = 0, f = 1;
+	size_t len = 0, n = 1;
 	ssize_t read = 0;
-	char **argv = NULL;
 	char *line = NULL;
 
 	while (1)
 	{
-		f = interactive(f);
+		n = interactive(n);
 		read = getline(&line, &len, stdin);
-		free(argv);
-		argv = parser(line);
 	}
 }
