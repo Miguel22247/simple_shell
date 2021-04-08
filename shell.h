@@ -29,8 +29,9 @@ int _putchar(char c);
 char *_strcat(char *dest, char *src);
 char *_strcpy(char *dest, char *src);
 
-/*aux functions
-char space_counter(char *line);*/
-
+/*aux functions*/
+void free_all(char *line, char **argv);
+char space_counter(char *line);
+char **parser(char *input);
 
 #endif
