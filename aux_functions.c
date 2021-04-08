@@ -57,7 +57,7 @@ char **parser(char *input)
 	arg_count = space_counter(input) + 1;
 
 	/* add one for the null byte */
-	args = malloc(sizeof(char *) * (args_count) + 1);
+	args = malloc(sizeof(char *) * (arg_count) + 1);
 
 	/* Store each argument as a string */
 	str_copy = _strdup(input);
