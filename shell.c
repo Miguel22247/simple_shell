@@ -14,12 +14,12 @@ int prompt(int n)
 	return (n);
 }
 
-int shell(char argc __attribute__ ((unused)), char *argv[])
+int shell(void)
 {
 	char *line;
 	size_t len;
 	char read;
-	char**argv = NULL;
+	char **argv = NULL;
 
 	while (1)
 	{

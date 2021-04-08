@@ -18,7 +18,7 @@
 
 /*main function*/
 /*int shell(void);*/
-int shell(char argc __attribute__ ((unused)), char *argv[]);
+int shell(void);
 /*for exit the hash*/
 int exit_hash(ssize_t endof, char *argv);
 
