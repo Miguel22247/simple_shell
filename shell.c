@@ -39,10 +39,10 @@ int prompt(int n)
  */
 int shell(void)
 {
-	size_t len = 0, n = 1;
+	size_t len = 0;
 	ssize_t read = 0;
 	char *line = NULL;
-
+char n;
 	while (1)
 	{
 		n = interactive(n);
