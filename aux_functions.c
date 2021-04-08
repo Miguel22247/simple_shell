@@ -6,9 +6,9 @@
 */
 
 /**
- * free - Sets some variables to frees allocs
+ * free_all - Sets some variables to frees allocs
  * @line: eof
- * @argv:
+ * @argv: sth
  * Return: void
 */
 void free_all(char *line, char **argv)
