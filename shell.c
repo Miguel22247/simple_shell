@@ -13,8 +13,8 @@ int shell(void)
 	/* int read; */
 
 	while (1)
-	{
-	    write(1, "(mcpshell) ", 10);
-	    getline(&line, &len, stdin);
-	}
+	    {
+	        write(1, "(mcpshell) ", 10);
+	        getline(&line, &len, stdin);
+	    }
 }
