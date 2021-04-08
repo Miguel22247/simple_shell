@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * shell - Entry point
+ * main - Entry point
  * description: main function of shell
  * Return: 0
  */
 
-int shell(void)
+int main(void)
 {
 	char *line;
 	size_t len;
