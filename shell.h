@@ -19,7 +19,6 @@
 
 /*main function*/
 int shell(void);
-int main(void);
 
 /*for exit the hash*/
 /*int exit_hash(ssize_t endof, char *argv);*/
