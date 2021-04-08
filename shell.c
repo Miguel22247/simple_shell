@@ -12,9 +12,9 @@ int shell(void)
 	size_t len;
 	/* int read; */
 
-	while (1)
-	    {
-	        write(1, "(mcpshell) ", 10);
-	        getline(&line, &len, stdin);
-	    }
+    while (1)
+    {
+        write(1, "(mcpshell) ", 10);
+        getline(&line, &len, stdin);
+    }
 }
