@@ -19,10 +19,12 @@
 /*main function*/
 /*int shell(void);*/
 int shell(void);
+
 /*for exit the hash
 int exit_hash(ssize_t endof, char *argv);
 */
-/*String Functions
+
+/*String Functions*/
 int _strlen(char *s);
 int _strcmp(char *s1, char *s2);
 int _putchar(char c);
