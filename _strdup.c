@@ -1,6 +1,24 @@
 #include "shell.h"
 
 /**
+ * _strlen - entry point
+ * @s: string to find length
+ * Return: length
+ */
+
+int _strlen(char *s)
+{
+	int len = 0;
+
+	if (s == NULL)
+		return (0);
+	for (len = 0; *s != 0; s++, len++)
+	{
+	}
+	return (len);
+}
+
+/**
  * _strdup - String dup.
  * @str: string
  * Return: a pointer to a newly alloc space in memory, containing a copy of str
