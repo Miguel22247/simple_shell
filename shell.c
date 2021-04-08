@@ -18,13 +18,12 @@ int shell(void)
 {
 	char *line;
 	size_t len;
-	int read;
 	char **argv = NULL;
 
 	while (1)
 	{
 		n = prompt(n); //llama a una funcion que imprime el prompt
-		read = getline(&line, len, stdin);
+		getline(&line, len, stdin);
 	}
 	return (0);
 }
