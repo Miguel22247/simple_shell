@@ -1,6 +1,7 @@
 #include "shell.h"
-/* idea para exit fun
-/* if (comando == "exit")
+/*
+* idea para exit fun
+* if (comando == "exit")
 * exit(EXIT_SUCCESS);
 */
 
@@ -32,7 +33,7 @@ char space_counter(char *line)
 			if (line[i] == ' ')
 				count++;
 		}
-		return(count);
+		return (count);
 }
 
 /**
@@ -51,11 +52,11 @@ char **parser(char *input)
 	if (input == NULL)
 		perror("Error while parsing the command\n", 100); /* check man perror*/
 
-	/* Count the number of arguments present in the input */
-	arg_count = space_counter(input) + 1; /* there is one more word than space count, e.g. between 4 words there's 3 spaces */
+	/* there is one more word than space count, e.g. between 4 words there's 3 spaces */
+	arg_count = space_counter(input) + 1;
 
-	/* Allocate memory to hold each argument as a string */
-	args = malloc(sizeof(char *) * (args_count) + 1); /* add one for the null byte */
+	/* add one for the null byte */
+	args = malloc(sizeof(char *) * (args_count) + 1);
 
 	/* Store each argument as a string */
 	str_copy = _strdup(input);
