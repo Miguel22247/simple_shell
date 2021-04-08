@@ -16,6 +16,9 @@ int shell(void)
 	{
 		if (isatty(STDIN_FILENO))
 			write (1, "(mcpshell) ", 4);
+
 		read = getline(&line, &len, stdin);
+
+		parser(line);
 	}
 }
