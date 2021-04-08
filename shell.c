@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * main - Entry point
+ * shell - Entry point
  * description: main function of shell
  * Return: 0
  */
