@@ -26,12 +26,12 @@ int main(void);
 
 /* String Functions */
 /*
-*int _strlen(char *s);
 *int _strcmp(char *s1, char *s2);
 *int _putchar(char c);
 *char *_strcat(char *dest, char *src);
 *char *_strcpy(char *dest, char *src);
 */
+int _strlen(char *s);
 char *_strdup(char *str);
 
 /*aux functions*/
