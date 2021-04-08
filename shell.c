@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * prompt - Function that prints the prompt
+ * interactive_part - Entry point
  * @n: command
  * Return: void
  */
@@ -13,10 +13,11 @@ int prompt(int n)
 	}
 	if (isatty(STDIN_FILENO))
 	{
-		write(1, "(mcpshell) ", 10);
+		write (1, "($)", 4);
 	}
 	return (n);
 }
+
 
 /**
  * main - Entry point
@@ -29,10 +30,10 @@ int shell(void)
 	size_t len = 0, n = 1;
 	char *line = NULL;
 	ssize_t read = 0;
-
+	
 	while (1)
 	{
-		n = prompt(n); /* calls a function that prints the prompt */
-		read = getline(&line, &len, stdin); /*gets the input*/
+		n = prompt(n);
+		read = getline(&line, &len, stdin);
 	}
 }
