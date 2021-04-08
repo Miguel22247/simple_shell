@@ -6,8 +6,8 @@
  */
 int shell(void)
 {
-	size_t len = 0;
-	char *line = NULL;
+	char *line;
+	size_t len;
 
 	while (1)
 	{
