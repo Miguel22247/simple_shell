@@ -27,7 +27,7 @@ int prompt(int n)
 
 int shell(void)
 {
-	size_t n = 1;
+	size_t len = 0, n = 1;
 	char *line = NULL;
 	ssize_t read = 0;
 	
