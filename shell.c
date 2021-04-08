@@ -4,26 +4,27 @@
  * 
  * Return: 0
  */
+
+int prompt(int n)
+{
+	if(!isatty(STDIN_FILENO))
+		n = 0;
+	if (isatty(STDIN_FILENO))
+		write(1, "(mcpshell) ", 10);
+	return (n);
+}
+
 int shell(char argc __attribute__ ((unused)), char *argv[])
 {
 	char *line;
 	size_t len;
-	int read;
+	char read;
 	char**argv = NULL;
 
 	while (1)
 	{
-		if(isatty(STDIN_FILENO))
-			write(1, "(mcpshell) ", 10);
-		read = getline(&line, &len, stdin);
-		
-		/*if (read == EOF)
-		{
-			exit(EXIT_SUCCESS);
-		}*/
-
-		if (_strcmp(argv[0], "exit") == 0) || read == EOF)
-			return (0); 
+		n = prompt(n); //llama a una funcion que imprime el prompt
+		read = getline(&line, len, stdin);
 	}
 	return (0);
 }
