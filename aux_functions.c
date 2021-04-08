@@ -52,7 +52,8 @@ char **parser(char *input)
 	if (input == NULL)
 		perror("Error while parsing the command\n", 100); /* check man perror*/
 
-	/* there is one more word than space count, e.g. between 4 words there's 3 spaces */
+	/* there is one more word than space count, */
+	/* e.g. between 4 words there's 3 spaces */
 	arg_count = space_counter(input) + 1;
 
 	/* add one for the null byte */
