@@ -5,9 +5,15 @@
  * Return: length
  */
 
+/**
+ * _strlen - entry point
+ * @s: string to find length
+ * Return: length
+ */
+
 int _strlen(char *s)
 {
-	int len;
+	int len = 0;
 
 	if (s == NULL)
 		return (0);
@@ -26,8 +32,8 @@ int _strlen(char *s)
 
 int _strcmp(char *s1, char *s2)
 {
-	int a;
-	int b;
+	int a = 0;
+	int b = 0;
 
 	while (*s1 == *s2)
 	{
@@ -53,6 +59,46 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 
+/**
+ * _strcat - entry point
+ * @dest: string to append
+ * @src: string to be appended
+ * Return: concatenaded strings
+ */
+
+char *_strcat(char *dest, char *src)
+{
+	char *start = NULL;
+
+	if ((dest == NULL) && (src == NULL))
+		return (NULL);
+	start = dest;
+	while (*start != '\0')
+		start++;
+	while (*src != '\0')
+		*start++ = *src++;
+	*start = '\0';
+	return (dest);
+}
+
+/**
+ *_strcpy - copy a string
+ * @dest: destination of the copied string
+ * @src: source of the string
+ * Return: copied string
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int i = 0, len = 0;
+
+	len = _strlen(src);
+	for (i = 0 ; i <= len ; i++)
+	{
+		dest[i] = src[i];
+	}
+	return (dest);
+}
 /**
  * _strdup - String dup.
  * @str: string
