@@ -29,7 +29,7 @@ int prompt(int n)
 	if(!isatty(STDIN_FILENO))
 		n = 0;
 	if (isatty(STDIN_FILENO))
-
+		write(1, "(mcpshell) ", 10);
 	return (n);
 }
 */
@@ -43,10 +43,10 @@ int shell(void)
 	size_t len = 0;
 	ssize_t read = 0;
 	char *line = NULL;
-char n;
+
 	while (1)
 	{
-		n = interactive(n);
+		write(1, "(mcpshell) ", 10);
 		read = getline(&line, &len, stdin);
 	}
 }
