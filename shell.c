@@ -41,12 +41,11 @@ int prompt(int n)
 int shell(void)
 {
 	size_t len = 0;
-	ssize_t read = 0;
 	char *line = NULL;
 
 	while (1)
 	{
 		write(1, "(mcpshell) ", 10);
-		read = getline(&line, &len, stdin);
+		getline(&line, &len, stdin);
 	}
 }
