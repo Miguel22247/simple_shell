@@ -48,4 +48,5 @@ int shell(void)
 		write(1, "(mcpshell) ", 10);
 		getline(&line, &len, stdin);
 	}
+	return (0);
 }
