@@ -9,13 +9,15 @@
 int main(void)
 {
 	char *line;
-	size_t len;
-	/* int read; */
+	size_t len, leer;
 
 	while (1)
 	{
 		write(1, "(mcpshell) ", 10);
-		getline(&line, &len, stdin);
+		leer = getline(&line, &len, stdin);
+
+		if (leer == -1)
+			printf("Error")
 
 		/*
 		*if (read == EOF)
