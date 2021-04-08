@@ -50,7 +50,7 @@ char **parser(char *input)
 	char *str_copy;
 
 	if (input == NULL)
-		perror("Error while parsing the command\n", 100); /* check man perror*/
+		perror(); /* check man perror*/
 
 	/* there is one more word than space count, */
 	/* e.g. between 4 words there's 3 spaces */
