@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include <string.h>
 
-/* Constants
+/** Constants
 * #define PATH_MAX 4096
 * #define BUFSIZE 1024
 */
