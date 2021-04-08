@@ -4,7 +4,7 @@
  * @n: command
  * Return: void
  */
-/**
+
 int prompt(int n)
 {
 	if (!isatty(STDIN_FILENO))
@@ -13,11 +13,10 @@ int prompt(int n)
 	}
 	if (isatty(STDIN_FILENO))
 	{
-		write (1, "($)", 4);
+		write (1, "(mcpshell)", 10);
 	}
 	return (n);
 }
-*/
 
 /**
  * main - Entry point
@@ -33,7 +32,7 @@ int shell(void)
 	
 	while (1)
 	{
-		write (1, "($)", 4);
+		n = prompt(n);
 		read = getline(&line, &len, stdin);
 	}
 }
