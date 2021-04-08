@@ -23,7 +23,7 @@ int shell(void)
 	while (1)
 	{
 		n = prompt(n); //llama a una funcion que imprime el prompt
-		getline(&line, len, stdin);
+		getline(&line, &len, stdin);
 	}
 	return (0);
 }
