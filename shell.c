@@ -10,11 +10,11 @@ int shell(void)
 {
 	char *line;
 	size_t len;
-	int read = 0;
+	/* int read; */
 
 	while (1)
 	{
-	write(1, "(mcpshell) ", 10);
-	read = getline(&line, &len, stdin);
+	    write(1, "(mcpshell) ", 10);
+	    getline(&line, &len, stdin);
 	}
 }
