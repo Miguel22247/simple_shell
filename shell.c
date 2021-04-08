@@ -17,7 +17,7 @@ int prompt(int n)
 int shell(void)
 {
 	char *line;
-	size_t len;
+	size_t len = 0, n = 1;
 	char **argv = NULL;
 
 	while (1)
