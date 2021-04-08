@@ -8,21 +8,20 @@ if (comando == "exit")
  * @line: eof
  * @argv:
  * Return: void
-
+*/
 void free_all(char *line, char **argv)
 {
 	free(line);
 	line = NULL;
 	free(argv);
 }
- */
-/*
 
+/**
 * space_counter - count the spaces between words in the line
 * @line: input
 * Return: the count of spaces
 */
-/**
+
 char space_counter(char *line)
 {
 	int i, count = 0;
@@ -34,7 +33,7 @@ char space_counter(char *line)
 		}
 		return(count);
 }
-*/
+
 /**
  * parser - Buidls an array of strings as arguments
  * @input: Command input given by the user
@@ -45,7 +44,7 @@ char **parser(char *input)
 {
 	int i, arg_count = 0;
 	char **args;
-	char *token, *tkn_ptr, *delimiter = " ";
+	char *token, *tkn_ptr;
 	char *str_copy;
 
 	if (input == NULL)
@@ -63,7 +62,7 @@ char **parser(char *input)
 
 	for (i = 0; i < arg_count; i++)
 	{
-		token = _strdup(tkn_ptr, delimiter);
+		token = _strdup(tkn_ptr);
 		if (token == NULL)
 			break;
 		tkn_ptr = NULL;
