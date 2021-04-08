@@ -10,12 +10,12 @@ int main(void)
 {
 	char *line;
 	size_t len;
-	int read;
+	/* int read; */
 
 	while (1)
 	{
 		write(1, "(mcpshell) ", 10);
-		read = getline(&line, &len, stdin);
+		getline(&line, &len, stdin);
 
 		/*
 		*if (read == EOF)
