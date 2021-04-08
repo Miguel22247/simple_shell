@@ -17,7 +17,7 @@ int main(void)
 		leer = getline(&line, &len, stdin);
 
 		if (leer == -1)
-			printf("Error")
+			printf("Error");
 
 		/*
 		*if (read == EOF)
