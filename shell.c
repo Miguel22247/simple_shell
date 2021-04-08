@@ -10,7 +10,7 @@ int shell(void)
 {
 	char *line;
 	size_t len;
-	int read;
+	int read = 0;
 
 	while (1)
 	{
