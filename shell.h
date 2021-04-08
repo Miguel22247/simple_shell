@@ -20,7 +20,7 @@
 int shell(void);
 
 /*for exit the hash*/
-int exit_hash(ssize_t endof, char *argv);
+/*int exit_hash(ssize_t endof, char *argv);*/
 
 /*String Functions*/
 int _strlen(char *s);
