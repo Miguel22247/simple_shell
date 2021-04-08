@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * interactive_part - Entry point
+ * prompt - Entry point
  * @n: command
  * Return: void
  */
@@ -32,7 +32,7 @@ int shell(void)
 	
 	while (1)
 	{
-		n = prompt(n);
+		n = prompt(n); // calls a function that prints the prompt
 		read = getline(&line, &len, stdin);
 	}
 }

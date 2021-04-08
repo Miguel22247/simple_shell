@@ -32,6 +32,5 @@ char *_strcpy(char *dest, char *src);
 /*aux functions
 char space_counter(char *line);*/
 int prompt(int n);
-int interactive_part(int n);
 
 #endif
