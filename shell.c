@@ -9,7 +9,7 @@ int main(void)
 {
 	if (isatty(STDIN_FILENO))
 	{
-		write (1, "($)", 4);
+		write (1, "(mcpshell) ", 4);
 	}
 	return (0);
 }
@@ -20,7 +20,7 @@ int main(void)
  * description: main function of shell
  * Return: 0
  */
-/*
+
 int shell(void)
 {
 	size_t len = 0, n = 1;
@@ -32,4 +32,4 @@ int shell(void)
 		n = prompt(n);
 		read = getline(&line, &len, stdin);
 	}
-} */
+}
