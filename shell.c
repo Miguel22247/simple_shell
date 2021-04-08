@@ -29,7 +29,7 @@ int shell(void)
 	
 	while (1)
 	{
-		n = prompt(n);
+		n = main(n);
 		read = getline(&line, &len, stdin);
 	}
 }
