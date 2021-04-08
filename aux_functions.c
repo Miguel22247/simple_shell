@@ -1,7 +1,8 @@
 #include "shell.h"
 /* idea para exit fun
-if (comando == "exit")
-	exit(EXIT_SUCCESS); */
+/* if (comando == "exit")
+* exit(EXIT_SUCCESS);
+*/
 
 /**
  * free - Sets some variables to frees allocs
