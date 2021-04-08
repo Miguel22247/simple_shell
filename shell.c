@@ -5,12 +5,16 @@
  * Return: void
  */
 
-int interactive_part(int n)
+int prompt(int n)
 {
 	if (!isatty(STDIN_FILENO))
-		n = 0;
+	{
+			n = 0;
+	}
 	if (isatty(STDIN_FILENO))
+	{
 		write (1, "($)", 4);
+	}
 	return (n);
 }
 
@@ -29,7 +33,7 @@ int shell(void)
 	
 	while (1)
 	{
-		n = interactive_part(n);
+		n = prompt(n);
 		read = getline(&line, &len, stdin);
 	}
 	return (0);	

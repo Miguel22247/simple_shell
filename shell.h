@@ -31,6 +31,6 @@ int _putchar(char c);
 /*aux functions
 char space_counter(char *line);*/
 int prompt(int n);
-int interactive_part(int n)
+int interactive_part(int n);
 
 #endif
