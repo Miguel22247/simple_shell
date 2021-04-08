@@ -11,9 +11,10 @@
 #include <string.h>
 
 /* Constants
-#define PATH_MAX 4096
-#define BUFSIZE 1024
- */
+* #define PATH_MAX 4096
+* #define BUFSIZE 1024
+*/
+
 /*functions*/
 
 /*main function*/
