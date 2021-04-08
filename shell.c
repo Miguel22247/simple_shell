@@ -19,6 +19,8 @@ int main(void)
 	}
 }
 
+#include "shell.h"
+
 /**
  * parser - Buidls an array of strings as arguments
  * @input: Command input given by the user
