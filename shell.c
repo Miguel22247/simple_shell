@@ -1,10 +1,29 @@
 #include "shell.h"
-/**
- * main - entry point
- * 
- * Return: 0
- */
+/*
+int exit_hsh(ssize_t eof, char **argv, int flag)
+{
+	int i = 0;
 
+	if (eof == EOF)
+	{
+		if(flag == 1)
+			_putchar('\n');
+		return (0);
+	}
+	if (argv[0])
+	{
+		if (_strcmp(argv[0], "exit") == 0)
+			return (0);
+
+		if ((_strcmp(argv[0], "env") == 0) && argv[1] == NULL)
+		{
+			for (i = 0; environ[i] != '\0' ; i++)
+				_puts(environ[i]);
+		}
+	}
+	return (1);
+}
+*/
 int prompt(int n)
 {
 	if(!isatty(STDIN_FILENO))
@@ -13,19 +32,23 @@ int prompt(int n)
 		write(1, "(mcpshell) ", 10);
 	return (n);
 }
-
+/**
+ * shell - entry point
+ * 
+ * Return: 0
+ */
 int shell(void)
 {
-	char *line;
-	size_t len = 0, n = 1;
+	size_t len = 0, f = 1;
+	ssize_t read = 0;
 	char **argv = NULL;
+	char *line = NULL;
 
 	while (1)
 	{
-		n = prompt(n); //llama a una funcion que imprime el prompt
-		getline(&line, &len, stdin); //obtiene lo ingresado por el usuario
+		f = interactive(f);
+		read = getline(&line, &len, stdin);
 		free(argv);
 		argv = parser(line);
 	}
-	return (0);
 }

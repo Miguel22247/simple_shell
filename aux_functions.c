@@ -1,22 +1,4 @@
 #include "shell.h"
-/**
- * exit_hash - Function tha handles different cases where the user wants to exit
- * @endof: eof
- * @argv: command
- * Return: 0
- */
-int exit_hash(ssize_t endof, char *argv)
-{
-	if (endof == EOF)
-	{
-		write(1, '\n', 1);
-		return (0);
-	}
-	if (_strcmp(argv, "exit") == 0)
-		return (0);
-	return (1);
-}
-
 /* idea para exit fun
 if (comando == "exit")
 	exit(EXIT_SUCCESS); */
@@ -27,7 +9,7 @@ if (comando == "exit")
  * @argv:
  * Return: void
 
-void free(char *line, char **argv)
+void free_all(char *line, char **argv)
 {
 	free(line);
 	line = NULL;
@@ -40,7 +22,7 @@ void free(char *line, char **argv)
 * @line: input
 * Return: the count of spaces
 */
-
+/**
 char space_counter(char *line)
 {
 	int i, count = 0;
@@ -52,7 +34,7 @@ char space_counter(char *line)
 		}
 		return(count);
 }
-
+*/
 /**
  * parser - Buidls an array of strings as arguments
  * @input: Command input given by the user
