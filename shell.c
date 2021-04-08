@@ -1,21 +1,17 @@
 #include "shell.h"
 /**
- * interactive_part - Entry point
+ * prompt - Function that prints the prompt
  * @n: command
  * Return: void
  */
 
-int prompt(int n)
+int prompt(void)
 {
-	if (!isatty(STDIN_FILENO))
-	{
-			n = 0;
-	}
 	if (isatty(STDIN_FILENO))
 	{
 		write (1, "($)", 4);
 	}
-	return (n);
+	return (0);
 }
 
 
@@ -24,7 +20,7 @@ int prompt(int n)
  * description: main function of shell
  * Return: 0
  */
-
+/*
 int shell(void)
 {
 	size_t len = 0, n = 1;
