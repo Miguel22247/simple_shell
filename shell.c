@@ -4,7 +4,7 @@
  * @n: command
  * Return: void
  */
-
+/**
 int prompt(int n)
 {
 	if (!isatty(STDIN_FILENO))
@@ -17,7 +17,7 @@ int prompt(int n)
 	}
 	return (n);
 }
-
+*/
 
 /**
  * main - Entry point
@@ -33,7 +33,7 @@ int shell(void)
 	
 	while (1)
 	{
-		n = prompt(n);
+		write (1, "($)", 4);
 		read = getline(&line, &len, stdin);
 	}
 }
