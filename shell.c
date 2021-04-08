@@ -23,15 +23,16 @@ int exit_hsh(ssize_t eof, char **argv, int flag)
 	}
 	return (1);
 }
-*/
+
 int prompt(int n)
 {
 	if(!isatty(STDIN_FILENO))
 		n = 0;
 	if (isatty(STDIN_FILENO))
-		write(1, "(mcpshell) ", 10);
+
 	return (n);
 }
+*/
 /**
  * shell - entry point
  * 
