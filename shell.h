@@ -2,13 +2,13 @@
 #define SHELL_H
 
 /* Libraries */
-#include <sys/stat.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include <sys/stat.h>
 
 /* Constants
 * #define PATH_MAX 4096
