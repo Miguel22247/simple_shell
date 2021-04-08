@@ -10,7 +10,7 @@
  * @s: string to find length
  * Return: length
  */
-
+/*
 int _strlen(char *s)
 {
 	int len = 0;
@@ -22,14 +22,14 @@ int _strlen(char *s)
 	}
 	return (len);
 }
-
+*/
 /**
  * _strcmp - entry point
  * @s1: string 1 to be compared
  * @s2: string 2 to be compared
  * Return: 0 if equal, !0 if different
  */
-
+/*
 int _strcmp(char *s1, char *s2)
 {
 	int a = 0;
@@ -46,19 +46,19 @@ int _strcmp(char *s1, char *s2)
 	b = *s2;
 	return (a - b);
 }
-
+*/
 /**
  * _putchar - writes the character c to stdout
  * @c: The character to print.
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-
+/*
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
-
+*/
 /**
  * _strcat - entry point
  * @dest: string to append
@@ -66,6 +66,7 @@ int _putchar(char c)
  * Return: concatenaded strings
  */
 
+/*
 char *_strcat(char *dest, char *src)
 {
 	char *start = NULL;
@@ -80,14 +81,14 @@ char *_strcat(char *dest, char *src)
 	*start = '\0';
 	return (dest);
 }
-
+*/
 /**
  *_strcpy - copy a string
  * @dest: destination of the copied string
  * @src: source of the string
  * Return: copied string
  */
-
+/*
 char *_strcpy(char *dest, char *src)
 {
 	int i = 0, len = 0;
@@ -99,6 +100,7 @@ char *_strcpy(char *dest, char *src)
 	}
 	return (dest);
 }
+*/
 /**
  * _strdup - String dup.
  * @str: string

@@ -23,12 +23,14 @@ int shell(void);
 /*for exit the hash*/
 /*int exit_hash(ssize_t endof, char *argv);*/
 
-/*String Functions*/
-int _strlen(char *s);
-int _strcmp(char *s1, char *s2);
-int _putchar(char c);
-char *_strcat(char *dest, char *src);
-char *_strcpy(char *dest, char *src);
+/*String Functions
+*int _strlen(char *s);
+*int _strcmp(char *s1, char *s2);
+*int _putchar(char c);
+*char *_strcat(char *dest, char *src);
+*char *_strcpy(char *dest, char *src);
+*/
+char *_strdup(char *str);
 
 /*aux functions*/
 void free_all(char *line, char **argv);
