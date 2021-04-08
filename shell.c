@@ -36,5 +36,4 @@ int shell(void)
 		n = prompt(n);
 		read = getline(&line, &len, stdin);
 	}
-	return (0);	
 }
