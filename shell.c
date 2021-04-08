@@ -4,17 +4,7 @@
  * @n: command
  * Return: void
  */
-int exit_hash(ssize_t endof, char **argv, int flag)
-{
-	int n = 0;
 
-	if (endof == EOF)
-	{
-		if(flag == 1)
-			write(1, '\n', 2);
-		return (0);
-	}
-}
 int prompt(int n)
 {
 	if (!isatty(STDIN_FILENO))
