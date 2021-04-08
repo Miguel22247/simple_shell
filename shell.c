@@ -23,7 +23,7 @@ int main(void)
 		*	exit(EXIT_SUCCESS);
 		*/
 
-		parser(read);
+		parser(line);
 	}
 }
 
