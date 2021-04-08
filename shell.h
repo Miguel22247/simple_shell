@@ -31,6 +31,6 @@ char *_strcpy(char *dest, char *src);
 
 /*aux functions
 char space_counter(char *line);*/
-int prompt(void);
+int main(void);
 
 #endif
