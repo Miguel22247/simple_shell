@@ -9,7 +9,8 @@
 int main(void)
 {
 	char *line;
-	size_t len, leer;
+	size_t len; 
+	ssize_t leer;
 
 	while (1)
 	{
