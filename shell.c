@@ -18,7 +18,7 @@ int shell(void)
 {
 	char *line;
 	size_t len;
-	char read;
+	int read;
 	char **argv = NULL;
 
 	while (1)
