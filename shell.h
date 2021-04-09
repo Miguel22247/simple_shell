@@ -19,8 +19,7 @@
 /*functions*/
 
 /*main function*/
-int main(void);
-int parte_interactiva (int n);
+int main(int argc, char *argv[]);
 /*for exit the hash*/
 /*int exit_hash(ssize_t endof, char *argv);*/
 

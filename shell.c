@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "shell1.h"
 
 /**
  * main - Entry point
@@ -6,17 +6,25 @@
  * Return: 0
  */
 
-int main(void)
+int main(int argc, char *argv[])
 {
 	char *line;
 	/* char **argv; */
-	size_t len, n;
+	size_t len;
 	ssize_t read;
 
 	while (1)
 	{
-		n = parte_interactiva(n);
+		if (isatty(STDIN_FILENO) == 1)
+			write(1,"(mcpshell)", 10);
 		read = getline(&line, &len, stdin);
+		if (read == -1)
+		{
+			if (isatty(STDIN_FILENO) == -1)
+					write(1,"\n", 1);
+			break;
+			
+		}
 
 		/* getline return -1 on failure to read a line */
 		/* (including end-of-file condition) */
