@@ -35,7 +35,10 @@ int _strlen(char *s);
 char *_strdup(char *str);
 
 /*aux functions*/
-void free_all(char *line, char **argv);
+/*
+* void free_all(char *line, char **argv);
+* char *_memcpy(char *dest, char *src, unsigned int n);
+*/
 char space_counter(char *line);
 char **parser(char *input);
 

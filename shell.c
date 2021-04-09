@@ -9,27 +9,34 @@
 int main(void)
 {
 	char *line;
-	size_t len; 
+	char **argv;
+	size_t len, n; 
+	ssize_t read;
 
 	while (1)
 	{
-		write(1, "(mcpshell) ", 10);
-		getline(&line, &len, stdin);
+		write(1, "(mcpshell)", 10);
+		read = getline(&line, &len, stdin);
 
-		if ((getline(&line, &len, stdin)) == -1)
-			printf("Error");
+		/* getline return -1 on failure to read a line */
+		/* (including end-of-file condition) */
+		if (read == -1)
+		{	
+			if (feof(stdin))
+				exit(EXIT_SUCCESS);  /* EOF */
+			else
+			{
+				perror("Error");
+				exit(EXIT_FAILURE);
+			}
+			break; /* funciona similar que el exit?? */
+		}
 
-		/*
-		*if (read == EOF)
-		*	free(line);
-		*	exit(EXIT_SUCCESS);
-		*/
-
-		parser(line);
 	}
+	free(line);
+	/* return () void fun */
 }
 
-#include "shell.h"
 
 /**
  * parser - Buidls an array of strings as arguments
