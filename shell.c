@@ -10,7 +10,7 @@ int main(void)
 {
 	char *line;
 	/* char **argv; */
-	size_t len, n;
+	size_t len;
 	ssize_t read;
 
 	while (1)
@@ -24,7 +24,7 @@ int main(void)
 		{
 			/*
 			* if (feof(stdin))
-			*	exit(EXIT_SUCCESS);  /* EOF
+			*	exit(EXIT_SUCCESS);
 			* else
 			* {
 			*	perror("Error");
@@ -36,7 +36,7 @@ int main(void)
 
 	}
 	free(line);
-	/* return () void fun */
+	return (0);
 }
 
 
