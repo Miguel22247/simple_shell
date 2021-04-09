@@ -20,7 +20,7 @@
 
 /*main function*/
 int main(void);
-
+int parte_interactiva (int n);
 /*for exit the hash*/
 /*int exit_hash(ssize_t endof, char *argv);*/
 

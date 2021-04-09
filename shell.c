@@ -10,12 +10,12 @@ int main(void)
 {
 	char *line;
 	/* char **argv; */
-	size_t len;
+	size_t len, n;
 	ssize_t read;
 
 	while (1)
 	{
-		write(1, "(mcpshell)", 10);
+		n = parte_interactiva(n);
 		read = getline(&line, &len, stdin);
 
 		/* getline return -1 on failure to read a line */
@@ -41,7 +41,7 @@ int main(void)
 
 
 /**
- * parser - Buidls an array of strings as arguments
+ * parser - Builds an array of strings as arguments
  * @input: Command input given by the user
  *
  * Return: Array of strings

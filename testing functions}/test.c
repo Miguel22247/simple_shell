@@ -27,7 +27,7 @@ int exit_hash(ssize_t endof, char **argv, int flag, char *line)
 				return (0);
 			
 		}
-		
+		return (1);
 	}
 	
 /*
