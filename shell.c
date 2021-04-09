@@ -9,8 +9,8 @@
 int main(void)
 {
 	char *line;
-	char **argv;
-	size_t len, n; 
+	/* char **argv; */
+	size_t len, n;
 	ssize_t read;
 
 	while (1)
@@ -21,7 +21,7 @@ int main(void)
 		/* getline return -1 on failure to read a line */
 		/* (including end-of-file condition) */
 		if (read == -1)
-		{	
+		{
 			if (feof(stdin))
 				exit(EXIT_SUCCESS);  /* EOF */
 			else
