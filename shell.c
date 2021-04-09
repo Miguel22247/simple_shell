@@ -1,4 +1,4 @@
-#include "shell1.h"
+#include "shell.h"
 
 /**
  * main - Entry point
@@ -26,4 +26,7 @@ int main(int argc, char *argv[])
 			
 		}
 	}
+	free (line);
+	line = NULL;
+	return (0);
 }
