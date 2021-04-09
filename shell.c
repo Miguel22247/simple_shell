@@ -22,13 +22,15 @@ int main(void)
 		/* (including end-of-file condition) */
 		if (read == -1)
 		{
-			if (feof(stdin))
-				exit(EXIT_SUCCESS);  /* EOF */
-			else
-			{
-				perror("Error");
-				exit(EXIT_FAILURE);
-			}
+			/*
+			* if (feof(stdin))
+			*	exit(EXIT_SUCCESS);  /* EOF 
+			* else
+			* {
+			*	perror("Error");
+			*	exit(EXIT_FAILURE);
+			*}
+			*/
 			break; /* funciona similar que el exit?? */
 		}
 
