@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * 
+ * parte_interactiva - stg
  * @n: sets the prompt value
  * Return: the prompt or 0
  */
