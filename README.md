@@ -30,6 +30,8 @@ Every file contains the functions that will be used to work with the main file:
 
 * shell.h: header file.
 
+* shell.c: the main shell file
+
 
 ## Bugs
 Not known yet
