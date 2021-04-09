@@ -24,7 +24,7 @@ int main(void)
 		{
 			/*
 			* if (feof(stdin))
-			*	exit(EXIT_SUCCESS);  /* EOF 
+			*	exit(EXIT_SUCCESS);  /* EOF
 			* else
 			* {
 			*	perror("Error");
