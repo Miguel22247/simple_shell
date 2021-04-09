@@ -21,9 +21,9 @@ int main(int argc, char *argv[])
 			if (read == -1) /* EOF */
 			{
 				if (isatty(STDIN_FILENO) == -1)
-						write(1, "\n", 1);
+					write(1, "\n", 1);
 				break;
-				
+
 			}
 			if (line[read - 1] == '\n')
 					line[read - 1] = '\0';
