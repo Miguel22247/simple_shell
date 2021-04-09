@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 				write(1,"(mcpshell)", 10);
 			read = getline(&line, &len, stdin);
 			
-			if (read == -1)
+			if (read == -1) /* EOF */
 			{
 				if (isatty(STDIN_FILENO) == -1)
 						write(1,"\n", 1);
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 				
 			}
 			if(line[read - 1] == '\n')
-					line[read -1] = '\0';
+					line[read - 1] = '\0';
 			if (*line == '\0')
 				continue;
 	}
