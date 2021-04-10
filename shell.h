@@ -10,6 +10,10 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 
+
+/* external variables */
+extern char **enviroment
+
 /* main function */
 int main(int argc, char *argv[]);
 
