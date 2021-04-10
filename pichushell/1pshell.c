@@ -31,6 +31,11 @@ int main(int argc, char *argv[])
 			exit(0);
 			perror("command not found");
 		}
+		if (read == 0)
+		{
+			free(buffer);
+			exit(0);
+		}
 	return (0);
 	}
 }
