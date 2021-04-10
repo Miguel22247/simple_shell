@@ -6,7 +6,7 @@
  * @argv: argument vector
   * Return: void;
  */
-int main(int argc, char *argv[])
+int main(int argc, char *argv[] __attribute__ ((unused)))
 {
 	ssize_t read;
 	char *buffer;
@@ -35,6 +35,6 @@ int main(int argc, char *argv[])
 
 		/* else() */
 
-	return(0);
+	return (0);
 	}
 }
