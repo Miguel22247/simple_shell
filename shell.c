@@ -50,14 +50,14 @@ int commandread (char *line, size_t __attribute__((unused))read)
 	if(_strcmp(line, "exit") == 0)
 		return (2);
 	if (_strcmp(line, "env")== 0)
-		return (_printenv());
+		return (print_enviroment());
 	tkn = strtok(line, " "), n = 0;
 }
 
 void not_found(char *command)
 {
-	write(2, name, _strlen(name));
+	write(2, name, strlen(name));
 	write(2,": 1:", 5);
-	write(2, command, _strlen(command));
+	write(2, command, strlen(command));
 	write(2, ": not found\n", 12);
 }
