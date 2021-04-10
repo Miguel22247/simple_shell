@@ -78,10 +78,8 @@ char *path_finder(char *command)
 
 	new_path = malloc(sizeof(char) * 100);
 	if (getenv("PATH")[0] == ":")
-	{
 		if (stat(command, &buffer) == 0)
 			return (strdup(command));
-	}
 	while (path_tkn != NULL)
 	{
 		path_array[l++] = path_tkn;
