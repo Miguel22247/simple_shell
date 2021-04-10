@@ -52,7 +52,7 @@ int commandread (char *line, size_t __attribute__((unused))read)
 	if (_strcmp(line, "env")== 0)
 		return (print_enviroment());
 	tkn = strtok(line, " "), n = 0;
-	while (token)
+	while (tkn)
 	{
 		commandarray[n++] = tkn;
 		tkn = strtok(NULL, " ");
@@ -93,7 +93,7 @@ int call (char *commandarray[])
 	{
 		execve(executable_path_string, commandarray, environ);
 		perror("Error:");
-		exit();
+		exit(1);
 	}
 	free(executable_path_string);
 	return (0);

@@ -77,7 +77,7 @@ char *path_finder(char *command)
 	struct stat buffer;
 
 	new_path = malloc(sizeof(char) * 100);
-	if (getenv("PATH")) == ":")
+	if (getenv("PATH")[0] == ":")
 	{
 		if (stat(command, &buffer) == 0)
 			return (strdup(command));
@@ -88,9 +88,9 @@ char *path_finder(char *command)
 		path_tkn = strtok(NULL, ":");
 	}
 	path_array[l] = NULL;
-	for (j = 0; path_array[j]; j++)
+	for (m = 0; path_array[m]; m++)
 	{
-		strcpy(new_path, path_array[j]);
+		strcpy(new_path, path_array[m]);
 		strcat(new_path, "/");
 		strcat(new_path, string2);
 		strcat(new_path, "\0");
