@@ -1,87 +1,82 @@
 #include "shell.h"
 
 char *name;
-/**
- * main - Entry point
- * description: main function of shell
- * Return: 0
- */
+
 int main(int argc, char *argv[])
 {
-	char *line;
-	size_t len;
-	ssize_t read;
+	char *line = NULL;
+	size_t len= 0;
+	ssize_t read = 0;
 
-(void) argc;
-name = argv[0];
+	(void) argc;
+	name = argv[0];
 
 	while (1)
+	{
+		if (isatty(STDIN_FILENO) == 1)
+			write(1, "$ ", 2);
+		read = getline(&line, &len, stdin);
+		if (read == -1)
 		{
 			if (isatty(STDIN_FILENO) == 1)
-				write(1, "(mcpshell)", 10); /* Prompt */
-			read = getline(&line, &len, stdin); /*obtiene la linea */
+				write(1, "\n", 1);
+			break;
+		}
 
-			if (read == -1) /* EOF */
-			{
-				if (isatty(STDIN_FILENO) == -1)
-					write(1, "\n", 1);
-				break;
-
-			}
-			if (line[read - 1] == '\n')
-					line[read - 1] = '\0';
-			if (*line == '\0')
-				continue;
-			if (commandread(line, read) == 2)
-				break;
-			
+		if (line[read - 1] == '\n')
+			line[read - 1] = '\0';
+		if (*line == '\0')
+			continue;
+		if (cmdread(line, read) == 2)
+			break;
 	}
-	free(line);
+	free (line);
 	line = NULL;
 	return (0);
 }
 
-int commandread (char *line, size_t __attribute__((unused))read)
+int cmdread(char *line, size_t __attribute__((unused))file_strm)
 {
-	char *tkn;
-	char *commandarray[100];
+	char *tkn = NULL;
+	char *cmdarray[100];
 	int n;
 
-	if(_strcmp(line, "exit") == 0)
+	if (_strcmp(line, "exit") == 0)
 		return (2);
-	if (_strcmp(line, "env")== 0)
-		return (print_enviroment());
+	if (_strcmp(line, "env") == 0)
+		return (_printenv());
 	tkn = strtok(line, " "), n = 0;
 	while (tkn)
 	{
-		commandarray[n++] = tkn;
+		cmdarray[n++] = tkn;
 		tkn = strtok(NULL, " ");
 	}
-	commandarray[n] = NULL;
-	return (call(commandarray));
+	cmdarray[i] = NULL;
+	return (calling(commandarray));
+
 }
 
-void not_found(char *command)
+void notfound(char *command)
 {
 	write(2, name, strlen(name));
-	write(2,": 1:", 5);
+	write(2, ": 1: ", 5);
 	write(2, command, strlen(command));
 	write(2, ": not found\n", 12);
 }
 
 int call (char *commandarray[])
 {
-	char *executable_path_string;
-	char *command;
+	char *executable_path_string = NULL;
+	char *command = NULL;
 	pid_t child;
 	int status;
 
-	command = commandarray[0];
+	command = commanddarray[0];
 	executable_path_string = path_finder(command);
 	if (executable_path_string == NULL)
 	{
-		not_found(command);
-		return(3);
+		notfound(command);
+		return (3);
 	}
 	child = fork();
 	if (child < 0)
@@ -89,6 +84,8 @@ int call (char *commandarray[])
 		perror("Error:");
 		return (-1);
 	}
+	if (child > 0)
+		wait(&status);
 	else if (child == 0)
 	{
 		execve(executable_path_string, commandarray, environ);

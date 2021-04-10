@@ -16,7 +16,7 @@ char *path_finder(char *command)
 			return (strdup(command));
 	while (path_tkn != NULL)
 	{
-		path_array[i++] = path_tkn;
+		path_array[l++] = path_tkn;
 		path_tkn = strtok(NULL, ":");
 	}
 	path_array[l] = NULL;
