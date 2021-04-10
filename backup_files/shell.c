@@ -18,8 +18,8 @@ name = argv[0];
 	while (1)
 		{
 			if (isatty(STDIN_FILENO) == 1)
-				write(1, "(mcpshell)", 10);
-			read = getline(&line, &len, stdin);
+				write(1, "(mcpshell)", 10); /* Prompt */
+			read = getline(&line, &len, stdin); /*obtiene la linea */
 
 			if (read == -1) /* EOF */
 			{
@@ -52,6 +52,13 @@ int commandread (char *line, size_t __attribute__((unused))read)
 	if (_strcmp(line, "env")== 0)
 		return (print_enviroment());
 	tkn = strtok(line, " "), n = 0;
+	while (token)
+	{
+		commandarray[n++] = tkn;
+		tkn = strtok(NULL, " ");
+	}
+	commandarray[n] = NULL;
+	return (call(commandarray));
 }
 
 void not_found(char *command)
@@ -60,4 +67,34 @@ void not_found(char *command)
 	write(2,": 1:", 5);
 	write(2, command, strlen(command));
 	write(2, ": not found\n", 12);
+}
+
+int call (char *commandarray[])
+{
+	char *executable_path_string;
+	char *command;
+	pid_t child;
+	int status;
+
+	command = commandarray[0];
+	executable_path_string = path_finder(command);
+	if (executable_path_string == NULL)
+	{
+		not_found(command);
+		return(3);
+	}
+	child = fork();
+	if (child < 0)
+	{
+		perror("Error:");
+		return (-1);
+	}
+	else if (child == 0)
+	{
+		execve(executable_path_string, commandarray, environ);
+		perror("Error:");
+		exit();
+	}
+	free(executable_path_string);
+	return (0);
 }
