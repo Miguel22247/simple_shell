@@ -12,7 +12,7 @@ int print_enviroment(void)
 	while (line)
 	{
 		write(1, line, strlen(line));
-		write(1, '\n', 1);
+		write(1, "\n", 1);
 		line = environ[++n];
 	}
 	return (0);
