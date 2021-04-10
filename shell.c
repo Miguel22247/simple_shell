@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
 
 (void) argc;
 name = argv[0];
+
 	while (1)
 		{
 			if (isatty(STDIN_FILENO) == 1)
@@ -42,5 +43,21 @@ name = argv[0];
 
 int commandread (char *line, size_t __attribute__((unused))read)
 {
-	
+	char *tkn;
+	char *commandarray[100];
+	int n;
+
+	if(_strcmp(line, "exit") == 0)
+		return (2);
+	if (_strcmp(line, "env")== 0)
+		return (_printenv());
+	tkn = strtok(line, " "), n = 0;
+}
+
+void not_found(char *command)
+{
+	write(2, name, _strlen(name));
+	write(2,": 1:", 5);
+	write(2, command, _strlen(command));
+	write(2, ": not found\n", 12);
 }

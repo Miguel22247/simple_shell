@@ -6,14 +6,14 @@
  */
 int print_enviroment(void)
 {
-	char *line = enviroment[0];
+	char *line = environ[0];
 	int n = 0;
 
 	while (line)
 	{
-		write(1, line, _strlen(line));
+		write(1, line, strlen(line));
 		write(1, '\n', 1);
-		line = enviroment[++n];
+		line = environ[++n];
 	}
 	return (0);
 }
