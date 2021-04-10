@@ -29,6 +29,6 @@ int main(int argc, char *argv[])
 			perror("command not found");
 		}
 	buffer[read - 1] = '\0';
-	return(0);
+	return (0);
 	}
 }

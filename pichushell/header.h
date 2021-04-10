@@ -22,7 +22,7 @@ int print_enviroment(void);
 char path_finder(char *command);
 int calling(char *commandarray[]);
 
-/*string functions*/
+/*string handler functions*/
 char *_strdup(char *str);
 int _strcmp(char *s1, char *s2);
 
