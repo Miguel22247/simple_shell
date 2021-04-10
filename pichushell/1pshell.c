@@ -6,7 +6,7 @@
  * @argv: argument vector
   * Return: void;
  */
-int main(int argc __attribute__ ((unused)), char *argv[] __attribute__ ((unused)))
+int main(int argc, char *argv[])
 {
 	ssize_t read;
 	char *buffer;
@@ -25,16 +25,12 @@ int main(int argc __attribute__ ((unused)), char *argv[] __attribute__ ((unused)
 			exit(0);
 			perror("command not found");
 		}
-
 		if (read == EOF)
 		{
 			free(buffer);
 			exit(0);
 			perror("command not found");
 		}
-
-		/* else() */
-
 	return (0);
 	}
 }
