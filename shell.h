@@ -12,7 +12,7 @@
 
 
 /* external variables */
-extern char **enviroment
+extern char **enviroment;
 
 /* main function */
 int main(int argc, char *argv[]);
