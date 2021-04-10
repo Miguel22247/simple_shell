@@ -16,8 +16,11 @@ extern char **environ;
 
 /* main functions */
 int main(int argc, char *argv[]);
-int commandread (char *line, size_t __attribute__((unused))read);
-
+int commandread(char *buffer, size_t __attribute__((unused))read);
+void not_found(char *command);
+int print_enviroment(void);
+char path_finder(char *command);
+int calling(char *commandarray[]);
 /*string functions*/
 char *_strdup(char *str);
 int _strlen(char *s);
