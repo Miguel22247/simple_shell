@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 
 	while (1)
 	{
-		if (isatty(STDIN_FILENO))
+		if (isatty(STDIN_FILENO) == 1)
 		{
 			write(1, "(mcpshell)", 10);
 		}
