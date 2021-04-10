@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * parte_interactiva - stg
+ * parte_interactiva - sth
  * @n: sets the prompt value
  * Return: the prompt or 0
  */
@@ -136,6 +136,7 @@ int _strlen(char *s)
 		return (0);
 	for (len = 0; *s != 0; s++, len++)
 	{
+		/*?*/
 	}
 	return (len);
 }

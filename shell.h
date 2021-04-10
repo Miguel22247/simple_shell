@@ -14,7 +14,12 @@
 /* external variables */
 extern char **enviroment;
 
-/* main function */
+/* main functions */
 int main(int argc, char *argv[]);
+int commandread (char *line, size_t __attribute__((unused))read);
+
+/*string functions*/
+char *_strdup(char *str);
+int _strlen(char *s);
 
 #endif
