@@ -23,14 +23,16 @@ int main(int argc, char *argv[])
 		{
 			free(buffer);
 			exit(0);
+			perror("command not found");
 		}
-		perror("command not found");
+
 		if (read == EOF)
 		{
 			free(buffer);
 			exit(0);
+			perror("command not found");
 		}
-		perror("command not found");
+
 		else ()
 
 	return(0);
