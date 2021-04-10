@@ -1,41 +1,48 @@
 #include "shell.h"
 /**
- * _strlen - entry point
- * @s: string to find length
- * Return: length
+ * _strcmp - a function that compares two strings
+ * @s1: input one
+ * @s2: input two
+ * Return: Always 0 (Success)
  */
-
-int _strlen(char *s)
-{
-	int len = 0;
-
-	if (s == NULL)
-		return (0);
-	for (len = 0; *s != 0; s++, len++)
-	{
-	}
-	return (len);
-}
-
-/**
- * _strdup - String dup.
- * @str: string
- * Return: a pointer to a newly alloc space in memory, containing a copy of str
- */
-
-char *_strdup(char *str)
+int _strcmp(char *s1, char *s2)
 {
 	int i;
-	char *p;
 
-	if (str == NULL)
-		return (NULL);
-	p = malloc(sizeof(char) * (_strlen(str) + 1));
-	if (p == NULL)
-		return (NULL);
-	for (i = 0 ; i < (_strlen(str) + 1) ; i++)
+	for (i = 0; s1[i] != '\0' && s2[i] != '\0'; i++)
 	{
-		p[i] = str[i];
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
 	}
-	return (p);
+	return (0);
+}
+/**
+ * _strdup - duplicates a string into newly allocated array
+ *
+ * @str: string to duplicate
+ *
+ * Return: pointer to new string
+ */
+char *_strdup(char *str)
+{
+	int size = 0;
+	char *ptr, *ret;
+
+	if (!str)
+		return (NULL);
+
+	ptr = str;
+	while (*ptr++)
+		size++;
+
+	ret = malloc(size + 1);
+	if (!ret)
+		return (NULL);
+
+	ptr = ret;
+	while (*str)
+		*ptr++ = *str++;
+
+	*ptr = 0;
+	return (ret);
 }
