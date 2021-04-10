@@ -7,7 +7,7 @@ int _printenv(void)
 
 	while (line)
 	{
-		write(1, line, strlen(s));
+		write(1, line, strlen(i));
 		write(1, "\n", 1);
 		line = environ[++i];
 	}

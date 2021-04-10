@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 int cmdread(char *line, size_t __attribute__((unused))file_strm)
 {
 	char *tkn = NULL;
-	char *cmdarray[100];
+	char *commandarray[100];
 	int n;
 
 	if (_strcmp(line, "exit") == 0)
@@ -51,7 +51,7 @@ int cmdread(char *line, size_t __attribute__((unused))file_strm)
 		cmdarray[n++] = tkn;
 		tkn = strtok(NULL, " ");
 	}
-	cmdarray[i] = NULL;
+	commandarray[n] = NULL;
 	return (calling(commandarray));
 
 }
