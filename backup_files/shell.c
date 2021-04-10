@@ -71,7 +71,7 @@ int call (char *commandarray[])
 	pid_t child;
 	int status;
 
-	command = commanddarray[0];
+	command = commandarray[0];
 	executable_path_string = path_finder(command);
 	if (executable_path_string == NULL)
 	{
