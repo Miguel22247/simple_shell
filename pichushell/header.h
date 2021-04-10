@@ -21,8 +21,9 @@ void not_found(char *command);
 int print_enviroment(void);
 char path_finder(char *command);
 int calling(char *commandarray[]);
+
 /*string functions*/
 char *_strdup(char *str);
-int _strlen(char *s);
+int _strcmp(char *s1, char *s2);
 
 #endif
