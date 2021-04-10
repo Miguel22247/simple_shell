@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 			write(1, "(mcpshell)", 10);
 		}
 		read = getline(&buffer, &length, stdin);
-		if (read == -1)
+		if (buffer == -1)
 		{
 			if (isatty(STDIN_FILENO) == 1)
 					write(1, "\n", 1);
