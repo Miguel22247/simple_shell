@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 	return (0);
 }
 
-int cmdread(char *line, size_t __attribute__((unused))file_strm)
+int commandread(char *line, size_t __attribute__((unused))file_strm)
 {
 	char *tkn = NULL;
 	char *commandarray[100];
@@ -48,7 +48,7 @@ int cmdread(char *line, size_t __attribute__((unused))file_strm)
 	tkn = strtok(line, " "), n = 0;
 	while (tkn)
 	{
-		cmdarray[n++] = tkn;
+		commandarray[n++] = tkn;
 		tkn = strtok(NULL, " ");
 	}
 	commandarray[n] = NULL;
@@ -64,7 +64,7 @@ void notfound(char *command)
 	write(2, ": not found\n", 12);
 }
 
-int call (char *commandarray[])
+int call(char *commandarray[])
 {
 	char *executable_path_string = NULL;
 	char *command = NULL;
