@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 			perror("command not found");
 		}
 
-		else ()
+		/* else() */
 
 	return(0);
 	}
