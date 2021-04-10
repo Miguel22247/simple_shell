@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	{
 		if (isatty(STDIN_FILENO) == 1)
 		{
-			write(1, "(mcpshell)", 10);
+			write(1, "$ ", 2);
 		}
 		read = getline(&buffer, &length, stdin);
 		if (read == -1)
@@ -25,12 +25,6 @@ int main(int argc, char *argv[])
 					write(1, "\n", 1);
 			break;
 		}
-	/**	if (read == EOF)
-		{
-			free(buffer);
-			exit(0);
-			perror("command not found");
-		}*/
 		/**if (read == 0)
 		{
 			free(buffer);
