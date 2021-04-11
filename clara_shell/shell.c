@@ -67,6 +67,7 @@ int main (int argc, char **argv)
 int shell_loop(void)
 {
 	char *line = NULL;
+	char ex[] = "exit";
 	size_t len = 1024;
 	int read, i = 0;
 	char **tokens;
@@ -104,7 +105,8 @@ int shell_loop(void)
 		/* parser funcion: separates different arguments form stream*/
 		tokens = split_line(line);
 
-		if (tokens[0] == "exit")
+		/* compare to command */
+		if (!_strcmp(tokens[0], ex))
 			exit(0);
 
 		while (tokens[i] != NULL){
@@ -116,7 +118,7 @@ int shell_loop(void)
 		/* execute */
 
 		free(tokens);
-		
+
 		/* recursion for infinte loop */
 		shell_loop();
 	return (0);
