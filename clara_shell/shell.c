@@ -1,5 +1,48 @@
 #include "shell.h"
 #include "aux_funs.c"
+
+
+/**
+* split_line - parser
+* @line: line
+* Return: tokens
+*/
+
+char **split_line(char *line)
+{
+	int position = 0;
+	const char s[] = " ";
+	char *token;
+	char **tokens = malloc(BUFSIZE * sizeof(char*));
+
+	/* border case */
+	if (!tokens) {
+		write(STDERR_FILENO, "allocation error", 17);
+		exit(EXIT_FAILURE);
+	}
+
+	/* get the first token */
+	token = strotk(line, s);
+
+	/**
+	*  strtok return pointers to within the string you give it, 
+	* and place \0 bytes at the end of each token 
+	*/
+
+	/* walk through other tokens */
+	while (token != NULL) {
+		tokens[position] = token;
+		token = strotk(line, s);
+		position++; 
+	}
+
+	/* reallocate if necessary? */
+
+	tokens[position] = NULL;
+	return (tokens);
+}
+
+
 /**
  * shell - Entry point
  * description: main function of shell
@@ -18,6 +61,8 @@ int main (int argc, char **argv)
 * shell_loop - FUN
 * Return: 0
 */
+
+
 
 int shell_loop(void)
 {
@@ -73,46 +118,6 @@ int shell_loop(void)
 	return (0);
 }
 
-
-/**
-* split_line - parser
-* @line: line
-* Return: tokens
-*/
-
-char **split_line(char *line)
-{
-	int position = 0;
-	const char s[] = " ";
-	char *token;
-	char **tokens = malloc(BUFSIZE * sizeof(char*));
-
-	/* border case */
-	if (!tokens) {
-		write(STDERR_FILENO, "allocation error", 17);
-		exit(EXIT_FAILURE);
-	}
-
-	/* get the first token */
-	token = strotk(line, s);
-
-	/**
-	*  strtok return pointers to within the string you give it, 
-	* and place \0 bytes at the end of each token 
-	*/
-
-	/* walk through other tokens */
-	while (token != NULL) {
-		tokens[position] = token;
-		token = strotk(line, s);
-		position++; 
-	}
-
-	/* reallocate if necessary? */
-
-	tokens[position] = NULL;
-	return (tokens);
-}
 
 /**
 *
