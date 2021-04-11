@@ -87,7 +87,7 @@ char *split_line(char *line)
 	}
 
 	/* get the first token */
-	token = strotk(line, s);
+	/* token = strotk(line, s);   */
 	/**
 	* strtok return pointers to within the string you give it, 
 	* and place \0 bytes at the end of each token 
@@ -101,7 +101,7 @@ char *split_line(char *line)
 	/* reallocate if necessary? */
 
 	tokens[position] = NULL;
-	return (tokens);
+	return (token);
 }
 
 /**
