@@ -30,8 +30,9 @@ Every file contains the functions that will be used to work with the main file:
 
 * shell.h: header file.
 
-* shell.c: the main shell file
+* shell.c: the main shell file, storage the main functions related to the shell itself
 
+* aux_funs.c: storage the auxiliar functions like string related functions
 
 ## Bugs
 Not known yet
