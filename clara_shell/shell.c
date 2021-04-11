@@ -102,12 +102,11 @@ int shell_loop(void)
 			line[read - 1] = '\0';
 
 
-		/* parser funcion: separates different arguments form stream*/
+		/* parser function: separates different arguments from stream*/
 		tokens = split_line(line);
 
 		/* compare to command */
 		if (!_strcmp(tokens[0], ex)) {
-			free(line);
 			free_tokens(tokens);
 			exit(0);
 		}
