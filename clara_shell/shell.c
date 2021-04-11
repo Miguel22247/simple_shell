@@ -106,8 +106,11 @@ int shell_loop(void)
 		tokens = split_line(line);
 
 		/* compare to command */
-		if (!_strcmp(tokens[0], ex))
+		if (!_strcmp(tokens[0], ex)) {
+			free(line);
+			free_tokens(tokens);
 			exit(0);
+		}
 
 		while (tokens[i] != NULL){
 			printf("%s\n", tokens[i]);

@@ -21,5 +21,6 @@ void _puts(char *str);
 int _putchar(char c);
 char *_strdup(char *str);
 int _strcmp(char *s1, char *s2);
+void free_tokens(char **tokens);
 
 #endif
