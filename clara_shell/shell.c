@@ -23,7 +23,6 @@ char **split_line(char *line)
 	/* get the first token */
 	token = _strdup(strtok(line, s));
 	
-
 	/**
 	* strtok return pointers to within the string you give it, 
 	* and place \0 bytes at the end of each token 
@@ -112,7 +111,7 @@ int shell_loop(void)
 
 		/* execute */
 
-		/* printf("%s", line); */
+		free(line);
 	}
 	return (0);
 }
