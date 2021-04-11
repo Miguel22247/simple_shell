@@ -22,7 +22,8 @@ char **split_line(char *line)
 	}
 
 	/* get the first token */
-	token = strtok(line, s);
+	token = _strdup(strtok(line, s));
+	
 
 	/**
 	*  strtok return pointers to within the string you give it, 
@@ -32,7 +33,7 @@ char **split_line(char *line)
 	/* walk through other tokens */
 	while (token != NULL) {
 		tokens[position] = token;
-		token = strtok(line, s);
+		token = _strdup(strtok(line, s));
 		position++; 
 	}
 
@@ -114,7 +115,6 @@ int shell_loop(void)
 
 		/* printf("%s", line); */
 	}
-	free(line); /* outside of loop? */
 	return (0);
 }
 

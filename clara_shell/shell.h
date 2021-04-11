@@ -11,7 +11,7 @@
 #include <sys/stat.h>
 
 /* Constants */
-#define BUFSIZE 64 /*¡?¡?*/
+#define BUFSIZE 1024
 
 /* Functions */
 int shell_loop(void);
@@ -19,5 +19,6 @@ int shell_loop(void);
 /* Aux functions */
 void _puts(char *str);
 int _putchar(char c);
+char *_strdup(char *str);
 
 #endif
