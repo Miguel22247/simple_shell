@@ -72,8 +72,7 @@ int shell_loop(void)
 	char **tokens;
 	
 	/* Command loop */
-	while (1)
-	{
+
 		/* Prompt */
 		_puts("(mcpshell) ");
 
@@ -114,7 +113,7 @@ int shell_loop(void)
 		/* execute */
 
 		free(tokens);
-	}
+		shell_loop();
 	return (0);
 }
 
