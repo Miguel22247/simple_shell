@@ -25,14 +25,14 @@ char **split_line(char *line)
 	
 
 	/**
-	*  strtok return pointers to within the string you give it, 
+	* strtok return pointers to within the string you give it, 
 	* and place \0 bytes at the end of each token 
 	*/
 
 	/* walk through other tokens */
 	while (token != NULL) {
 		tokens[position] = token;
-		token = _strdup(strtok(line, s));
+		token = _strdup(strtok(NULL, s));
 		position++; 
 	}
 
