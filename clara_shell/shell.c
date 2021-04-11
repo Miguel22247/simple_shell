@@ -38,6 +38,7 @@ char **split_line(char *line)
 	/* reallocate if necessary? */
 
 	tokens[position] = NULL;
+	free(line);
 	return (tokens);
 }
 
@@ -106,12 +107,13 @@ int shell_loop(void)
 		i = 0;
 		while (tokens[i] != NULL){
 			printf("%s\n", tokens[i]);
+			free(tokens[i]);
 			i++;
 		}
 
 		/* execute */
 
-		free(line);
+		free(tokens);
 	}
 	return (0);
 }
