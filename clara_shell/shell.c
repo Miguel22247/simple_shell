@@ -68,7 +68,7 @@ int shell_loop(void)
 {
 	char *line = NULL;
 	size_t len = 1024;
-	int read, i;
+	int read, i = 0;
 	char **tokens;
 	
 	/* Command loop */
@@ -103,7 +103,10 @@ int shell_loop(void)
 
 		/* parser funcion: separates different arguments form stream*/
 		tokens = split_line(line);
-		i = 0;
+
+		if (tokens[0] == "exit")
+			exit(0);
+
 		while (tokens[i] != NULL){
 			printf("%s\n", tokens[i]);
 			free(tokens[i]);
@@ -113,6 +116,8 @@ int shell_loop(void)
 		/* execute */
 
 		free(tokens);
+		
+		/* recursion for infinte loop */
 		shell_loop();
 	return (0);
 }
