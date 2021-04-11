@@ -11,13 +11,13 @@
 #include <sys/stat.h>
 
 /* Constants */
-#define BUFFSIZE 64 /*¡?¡?*/
+#define BUFSIZE 64 /*¡?¡?*/
 
 /* Functions */
 int shell_loop(void);
 
 /* Aux functions */
 void _puts(char *str);
-int _putchar(char c)
+int _putchar(char c);
 
 #endif

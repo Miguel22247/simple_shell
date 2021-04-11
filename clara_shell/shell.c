@@ -62,7 +62,7 @@ int shell_loop(void)
 
 		printf("%s", line);
 	}
-	free(line) /* outside of loop? */
+	free(line); /* outside of loop? */
 	return (0);
 }
 
@@ -99,7 +99,6 @@ char *split_line(char *line)
 		position++; 
 	}
 	/* reallocate if necessary? */
-	if ()
 
 	tokens[position] = NULL;
 	return (tokens);
@@ -116,7 +115,7 @@ int execute(char **args)
 	int status;
 
 	pid = fork();
-	if (pid == 0)
+	/* if (pid == 0) */
 		/* child process */
 }
 
