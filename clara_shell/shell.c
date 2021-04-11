@@ -1,7 +1,6 @@
 #include "shell.h"
 #include "aux_funs.c"
 
-
 /**
 * split_line - parser
 * @line: line
@@ -13,7 +12,7 @@ char **split_line(char *line)
 	int position = 0;
 	const char s[] = " ";
 	char *token;
-	char **tokens = malloc(BUFSIZE * sizeof(char*));
+	char **tokens = malloc(1024 * sizeof(char *));
 
 	/* border case */
 	if (!tokens) {
