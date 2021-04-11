@@ -1,4 +1,5 @@
 #include "shell.h"
+#include "aux_funs.c"
 /**
  * shell - Entry point
  * description: main function of shell
@@ -42,7 +43,7 @@ int shell_loop(void)
 		{
 			free(line);
 
-			if (issaty(STDIN_FILENO) != 0)
+			if (isatty(STDIN_FILENO) != 0)
 				exit(EXIT_SUCCESS);
 			else {
 				perror("Error");
