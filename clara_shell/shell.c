@@ -1,5 +1,4 @@
 #include "shell.h"
-#include "aux_funs.c"
 
 /**
 * split_line - parser
