@@ -22,7 +22,7 @@ char **split_line(char *line)
 	}
 
 	/* get the first token */
-	token = strotk(line, s);
+	token = strtok(line, s);
 
 	/**
 	*  strtok return pointers to within the string you give it, 
@@ -32,7 +32,7 @@ char **split_line(char *line)
 	/* walk through other tokens */
 	while (token != NULL) {
 		tokens[position] = token;
-		token = strotk(line, s);
+		token = strtok(line, s);
 		position++; 
 	}
 
