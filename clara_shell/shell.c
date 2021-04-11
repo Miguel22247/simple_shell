@@ -66,8 +66,8 @@ int main (int argc, char **argv)
 
 int shell_loop(void)
 {
-	char *line;
-	size_t len;
+	char *line = NULL;
+	size_t len = 1024;
 	int read, i;
 	char **tokens;
 	
