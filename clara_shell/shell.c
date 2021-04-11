@@ -24,6 +24,7 @@ int shell_loop(void)
 	char *line;
 	size_t len;
 	int read, i;
+	char **tokens;
 	
 	/* Command loop */
 	while (1)
@@ -57,11 +58,16 @@ int shell_loop(void)
 
 
 		/* parser funcion: separates different arguments form stream*/
-		/* split_line(line); */
+		tokens = split_line(line);
+		i = 0;
+		while (tokens[i] != NULL){
+			printf("%s\n", tokens[i]);
+			i++;
+		}
 
 		/* execute */
 
-		printf("%s", line);
+		/* printf("%s", line); */
 	}
 	free(line); /* outside of loop? */
 	return (0);
@@ -74,10 +80,10 @@ int shell_loop(void)
 * Return: tokens
 */
 
-char *split_line(char *line)
+char **split_line(char *line)
 {
 	int position = 0;
-	const char s[2] = " ";
+	const char s[] = " ";
 	char *token;
 	char **tokens = malloc(BUFSIZE * sizeof(char*));
 
@@ -88,21 +94,24 @@ char *split_line(char *line)
 	}
 
 	/* get the first token */
-	/* token = strotk(line, s);   */
+	token = strotk(line, s);
+
 	/**
-	* strtok return pointers to within the string you give it, 
+	*  strtok return pointers to within the string you give it, 
 	* and place \0 bytes at the end of each token 
 	*/
 
 	/* walk through other tokens */
 	while (token != NULL) {
 		tokens[position] = token;
+		token = strotk(line, s);
 		position++; 
 	}
+
 	/* reallocate if necessary? */
 
 	tokens[position] = NULL;
-	return (token);
+	return (tokens);
 }
 
 /**
