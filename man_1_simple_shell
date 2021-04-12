@@ -1,19 +1,20 @@
-.TH man 1 "31 March 2021" "0.1 Beta version" "simple_shell man page"
+.TH man 1 "15 April 2021" "0.1 Beta version" "simple_shell man page"
 .SH NAME
 
 .B simple_shell man page
 
 .SH SYNOPSIS
-.B Use: _printf [format] [argument] ...
+.B Use: ./hsh
 
 .B Prototype:
-int _printf(const char * format, ...);
+
+
 
 .SH DESCRIPTION
 simple_shell tries to reproduce the original shell
 
 .SH SEE ALSO
-.B man 3 printf (printf man page)
+.B the shell itself
 
 .SH BUGS
 NO BUGS :)
