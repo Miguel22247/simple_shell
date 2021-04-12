@@ -137,7 +137,15 @@ int execute(char **args)
 	int status;
 
 	pid = fork();
-	/* if (pid == 0) */
-		/* child process */
+
+	if (pid == 0)
+	{
+		/* child process | storage execve()*/
+	}
+	if (pid != 0)
+	{
+		wait(ppid);
+	}
+	
 }
 
