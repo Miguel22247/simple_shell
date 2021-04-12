@@ -6,9 +6,13 @@
 .SH SYNOPSIS
 .B ./hsh
 
-
 .SH DESCRIPTION
 simple_shell tries to reproduce the original shell
+
+.SH BUILTINS
+.B env
+- prints enviroment
+.B exit
 
 .SH SEE ALSO
 .SH The Shell itself
