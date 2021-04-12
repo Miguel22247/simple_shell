@@ -4,17 +4,14 @@
 .B simple_shell man page
 
 .SH SYNOPSIS
-.B Use: ./hsh
-
-.B Prototype:
-
+.B ./hsh
 
 
 .SH DESCRIPTION
 simple_shell tries to reproduce the original shell
 
 .SH SEE ALSO
-.B the shell itself
+.SH The Shell itself
 
 .SH BUGS
 NO BUGS :)
