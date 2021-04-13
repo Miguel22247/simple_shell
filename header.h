@@ -24,5 +24,4 @@ int _strcmp(char *s1, char *s2);
 void free_tokens(char **tokens);
 char *string_nconcat(char *s1, char *s2, unsigned int n);
 int not_found(char *command);
-void enviroment(int argc, char *argv[], char * envp[]);
 #endif
