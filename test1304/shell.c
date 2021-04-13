@@ -159,7 +159,7 @@ int shell_loop(void)
 }
 
 /**
-* exectute - entry point
+* execute - entry point
 * @args: arguments
 * Return: an execution or error
 */
