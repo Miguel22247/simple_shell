@@ -1,8 +1,6 @@
 .TH man 1 "15 April 2021" "0.1 Beta version" "simple_shell man page"
 .SH NAME
-
 .B simple_shell man page
-
 .SH SYNOPSIS
 .B ./hsh
 
@@ -10,8 +8,11 @@
 simple_shell tries to reproduce the original shell
 
 .SH BUILTINS
-.B env - prints enviroment
-.B exit - exit the shell
+.B env 
+- prints enviroment
+
+.B exit
+- exit the shell
 
 .SH SEE ALSO
 .B The Shell itself
