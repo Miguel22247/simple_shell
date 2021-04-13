@@ -1,5 +1,10 @@
 #include"header.h"
-
+/**
+ * string_nconcat - a function that concat two strings
+ * @s1: string one
+ * @s2: string two
+ * @n: an unsigned int
+ */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	unsigned int len1, len2, i;
