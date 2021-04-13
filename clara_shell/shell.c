@@ -48,7 +48,7 @@ char **split_line(char *line)
  * Return: 0
  */
 
-int main (int argc, char **argv)
+int main (int argc __attribute__((unused)), char **argv __attribute__((unused)))
 {
 	/* command loop */
 	shell_loop();
@@ -130,22 +130,23 @@ int shell_loop(void)
 *
 *
 */
-
-int execute(char **args)
+x
+int execute(char **args __attribute__((unused)))
 {
 	pid_t pid, ppid;
-	int status;
+	/*int status;*/
 
 	pid = fork();
 
 	if (pid == 0)
 	{
-		/* child process | storage execve()*/
+		stat == 0;
+		execve();
 	}
 	if (pid != 0)
 	{
-		wait(ppid);
+		wait(pid);
 	}
-	
+	return;
 }
 
