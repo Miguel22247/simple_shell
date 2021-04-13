@@ -158,7 +158,7 @@ int shell_loop(void)
 	return (0);
 }
 
-/*
+/**
 * exectute - a function that executes
 * @args: arguments
 * return: an execution or error
@@ -204,7 +204,7 @@ int execute(char *args[])
 /**
  * not_found - prints if a command is not found
  * @command: command
- * return: an error message
+ * Return: an error message
  */
 int not_found(char *command)
 {
