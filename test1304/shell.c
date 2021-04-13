@@ -161,7 +161,7 @@ int shell_loop(void)
 /**
 * exectute - a function that executes
 * @args: arguments
-* return: an execution or error
+* Return: an execution or error
 */
 int execute(char *args[])
 {
