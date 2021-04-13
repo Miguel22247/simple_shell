@@ -130,7 +130,6 @@ int shell_loop(void)
 *
 *
 */
-x
 int execute(char **args __attribute__((unused)))
 {
 	pid_t pid, ppid;
