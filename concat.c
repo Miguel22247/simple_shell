@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "header.h"
 /**
  * string_nconcat - a function that concat two strings
  * @s1: string one

@@ -1,3 +1,5 @@
+#include "header.h"
+
 /**
  * _strlen - counts strings
  * @s: parameter s
