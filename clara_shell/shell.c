@@ -132,11 +132,11 @@ int shell_loop(void)
 */
 int execute(char **args __attribute__((unused)))
 {
-	pid_t pid /*ppid*/;
+	pid_t pid;
 	/*int status;*/
 
 	pid = fork();
 
-	return;
+	return (0);
 }
 
