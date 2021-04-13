@@ -99,7 +99,9 @@ int shell_loop(void)
 		}
 		if (read == 1)
 		{
+		
 			write(1, "(mcpshell) ", 10);
+			
 		}
 
 		/* change last position for a null byte (because getline doesn't) */
@@ -151,7 +153,7 @@ int execute(char *args[])
 	int status;
 
 	command = args[];
-	executable_path = /*path_finder*;
+	executable_path = path_finder;
 
 	if (executable_path == NULL)
 	{
@@ -184,7 +186,7 @@ int execute(char *args[])
 
 int not_found(char *command)
 {
-	write(2, name, strlen(name)); /**no se que poner aca*
+	write(2, name, strlen(name)); no se que poner aca
 	write(2, ": 1: ", 5);
 	write(2, command, strlen(command));
 	write(2, ": not found\n", 12);
