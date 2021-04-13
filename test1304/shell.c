@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "header.h"
 
 /**
 * split_line - parser
@@ -17,21 +17,22 @@ char **split_line(char *line)
 	if (!tokens) {
 		write(STDERR_FILENO, "allocation error", 17);
 		exit(EXIT_FAILURE);
-	}
+		free(line);
+}
 
 	/* get the first token */
 	token = _strdup(strtok(line, s));
-	
+
 	/**
-	* strtok return pointers to within the string you give it, 
-	* and place \0 bytes at the end of each token 
+	* strtok return pointers to within the string you give it,
+	* and place \0 bytes at the end of each token
 	*/
 
 	/* walk through other tokens */
 	while (token != NULL) {
 		tokens[position] = token;
 		token = _strdup(strtok(NULL, s));
-		position++; 
+		position++;
 	}
 
 	/* reallocate if necessary? */
@@ -70,20 +71,21 @@ int shell_loop(void)
 	size_t len = 1024;
 	int read, i = 0;
 	char **tokens;
-	
+	char env[] = "envitonment variables";
+
 	/* Command loop */
 
 		/* Prompt */
-		_puts("(mcpshell) ");
+	write(1, "(mcpshell) ", 11);
 
 		/* Read line, getline allocates mem */
-		read = getline(&line, &len, stdin);
+	read = getline(&line, &len, stdin);
 
 		/* check mem */
-		if(!line)
-			exit(0);
+	if(!line)
+		exit(0);
 
-		/* getline returns -1 if failed, including eof condition */
+	/* getline returns -1 if failed, including eof condition */
 		if (read == -1)
 		{
 			free(line);
@@ -104,11 +106,17 @@ int shell_loop(void)
 		/* parser function: separates different arguments from stream*/
 		tokens = split_line(line);
 
-		/* compare to command */
+		/* compare to "exit" command */
 		if (!_strcmp(tokens[0], ex)) {
 			free_tokens(tokens);
 			exit(0);
 		}
+                /* compare to "env" command */
+		if (!_strcmp(tokens[0], env)) {
+			free_tokens(tokens);
+			exit(0);
+		}
+
 
 		while (tokens[i] != NULL){
 			printf("%s\n", tokens[i]);
@@ -126,10 +134,11 @@ int shell_loop(void)
 }
 
 
-/**
+
+/*
 *
 *
-*/
+*
 int execute(char *args[])
 {
 	char *executable_path = NULL;
@@ -138,14 +147,14 @@ int execute(char *args[])
 	int status;
 
 	command = args[];
-	executable_path = /*path_finder*/;
-	
+	executable_path = /*path_finder*;
+
 	if (executable_path == NULL)
 	{
 		not_found(command);
 		return (3);
 	}
-	
+
 	pid = fork();
 
 	if (pid < 0)
@@ -171,8 +180,9 @@ int execute(char *args[])
 
 int not_found(char *command)
 {
-	write(2, name, strlen(name)); /**no se que poner aca*/
+	write(2, name, strlen(name)); /**no se que poner aca*
 	write(2, ": 1: ", 5);
 	write(2, command, strlen(command));
 	write(2, ": not found\n", 12);
 }
+*/

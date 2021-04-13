@@ -1,65 +1,46 @@
-#include "shell.h"
+#include "header.h"
 
 /**
- * _puts - outputs a line of stream
- * @str: inherited from main
- * Return: 0
+ * _strlen - counts strings
+ * @s: parameter s
+ * Description: counts the string characters
+ * Return: always 0
  */
 
-void _puts(char *str)
+int _strlen(char *s)
 {
-int i;
-for (i = 0; str[i] != '\0'; i++)
-{_putchar(str[i]);
-}
-_putchar('\n');
-}
+	int count = 0;
 
+	while (*(s + count))
+	{
+		count++;
+	}
+	return (count);
+}
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * _strdup - String dup.
+ * @str: string
+ * Return: a pointer to a newly alloc space in memory, containing a copy of str
  */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
 
-
-/**
- * _strdup - duplicates a string into newly allocated array
- *
- * @str: string to duplicate
- *
- * Return: pointer to new string
- */
 char *_strdup(char *str)
 {
-	int size = 0;
-	char *ptr, *ret;
+	int i;
+	char *p;
 
-	if (!str)
+	if (str == NULL)
 		return (NULL);
-
-	ptr = str;
-	while (*ptr++)
-		size++;
-
-	ret = malloc(size + 1);
-	if (!ret)
+	p = malloc(sizeof(char) * (_strlen(str) + 1));
+	if (p == NULL)
 		return (NULL);
-
-	ptr = ret;
-	while (*str)
-		*ptr++ = *str++;
-
-	*ptr = 0;
-	ret[size] = '\0';
-	return (ret);
+	for (i = 0 ; i < (_strlen(str) + 1) ; i++)
+	{
+		p[i] = str[i];
+	}
+	return (p);
 }
+
 
 /**
  * _strcmp - a function that compares two strings
