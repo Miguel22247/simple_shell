@@ -97,6 +97,10 @@ int shell_loop(void)
 				exit(EXIT_FAILURE);
 			}
 		}
+		if (read == 1)
+		{
+			putchar('\n');
+		}
 
 		/* change last position for a null byte (because getline doesn't) */
 		if (line[read - 1] == '\n' || line[read - 1] == '\t')
