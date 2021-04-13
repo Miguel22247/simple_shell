@@ -138,8 +138,13 @@ int shell_loop(void)
 	/* compare to "env" command */
 	if (!_strcmp(tokens[0], env))
 	{
-		enviroment(tokens);
-		free_tokens(tokens);
+		    char *envp[];
+			int i;
+ 
+			for (i = 0; envp[i] != NULL; i++)
+			{    
+				printf("\n%s", envp[i]);
+			}
 	}
 
 
@@ -157,20 +162,4 @@ int shell_loop(void)
 	/* recursion for infinte loop */
 	shell_loop();
 	return (0);
-}
-/**
- * enviroment - is a function that prints enviroment variables
- * @argc:
- * @argv:
- * @envp:
- * Return: enviroment variables
- */
-void enviroment(int argc, char *argv[], char * envp[])
-{
-    int i;
- 
-    for (i = 0; envp[i] != NULL; i++)
-    {    
-        printf("\n%s", envp[i]);
-    }
 }
