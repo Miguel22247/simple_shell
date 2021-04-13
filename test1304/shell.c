@@ -1,5 +1,6 @@
 #include "header.h"
 
+int execute(char *args[]);
 /**
 * split_line - parser
 * @line: line
@@ -74,18 +75,22 @@ int shell_loop(void)
 	char env[] = "envitonment variables";
 
 	/* Command loop */
-
-		/* Prompt */
+	/* Prompt */
 	write(1, "(mcpshell) ", 11);
 
-		/* Read line, getline allocates mem */
+	/* Read line, getline allocates mem */
 	read = getline(&line, &len, stdin);
 
-		/* check mem */
+	/* check mem */
 	if(!line)
 		exit(0);
 
 	/* getline returns -1 if failed, including eof condition */
+
+	if (read == -1)
+	{
+		free(line);
+
 		if (read == -1)
 		{
 			free(line);
@@ -99,46 +104,54 @@ int shell_loop(void)
 		}
 		if (read == 1)
 		{
-		
+
 			write(1, "(mcpshell) ", 10);
-			
+
 		}
 
-		/* change last position for a null byte (because getline doesn't) */
-		if (line[read - 1] == '\n' || line[read - 1] == '\t')
-			line[read - 1] = '\0';
-
-
-		/* parser function: separates different arguments from stream*/
-		tokens = split_line(line);
-
-		/* compare to "exit" command */
-		if (!_strcmp(tokens[0], ex)) {
-			free_tokens(tokens);
-			exit(0);
+		if (isatty(STDIN_FILENO) != 0)
+			exit(EXIT_SUCCESS);
+		else {
+			perror("Error");
+			exit(EXIT_FAILURE);
 		}
-                /* compare to "env" command */
-		if (!_strcmp(tokens[0], env)) {
-			free_tokens(tokens);
-			exit(0);
-		}
+	}
+
+	/* change last position for a null byte (because getline doesn't) */
+	if (line[read - 1] == '\n' || line[read - 1] == '\t')
+		line[read - 1] = '\0';
 
 
-		while (tokens[i] != NULL){
-			printf("%s\n", tokens[i]);
-			free(tokens[i]);
-			i++;
-		}
-
-		/* execute */
-
-		free(tokens);
-
-		/* recursion for infinte loop */
+	/* parser function: separates different arguments from stream*/
+	tokens = split_line(line);
+	if (!tokens[0])
 		shell_loop();
+	/* Compar to "exit" command */
+	if (!_strcmp(tokens[0], ex)) {
+		free_tokens(tokens);
+		exit(0);
+	}
+	/* compare to "env" command */
+	if (!_strcmp(tokens[0], env)) {
+		free_tokens(tokens);
+		exit(0);
+	}
+
+
+	while (tokens[i] != NULL){
+		printf("%s\n", tokens[i]);
+		free(tokens[i]);
+		i++;
+	}
+
+	/* execute */
+
+	free(tokens);
+
+	/* recursion for infinte loop */
+	shell_loop();
 	return (0);
 }
-
 
 
 /*
