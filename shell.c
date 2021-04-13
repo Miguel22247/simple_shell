@@ -137,8 +137,7 @@ int shell_loop(void)
 	/* compare to "env" command */
 	if (!_strcmp(tokens[0], env))
 	{
-		free_tokens(tokens);
-		exit(0);
+		enviroment();
 	}
 
 

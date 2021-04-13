@@ -39,3 +39,19 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	return (ret);
 }
+/**
+ * enviroment - is a function that prints enviroment variables
+ * @argc:
+ * @argv:
+ * @envp:
+ * Return: enviroment variables
+ */
+void enviroment(int argc, char *argv[], char * envp[])
+{
+    int i;
+ 
+    for (i = 0; envp[i] != NULL; i++)
+    {    
+        printf("\n%s", envp[i]);
+    }
+}

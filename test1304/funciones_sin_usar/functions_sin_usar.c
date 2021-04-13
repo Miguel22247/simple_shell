@@ -17,7 +17,7 @@ int execute(char *args[] __attribute__((unused)))
 	if (executable_path == NULL)
 	{
 		not_found(command);
-		return (3);
+		return (2);
 	}
 
 	pid = fork();
