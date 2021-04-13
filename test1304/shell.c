@@ -159,7 +159,7 @@ int shell_loop(void)
 }
 
 /**
-* exectute - a function that executes
+* exectute - entry point
 * @args: arguments
 * Return: an execution or error
 */
@@ -201,6 +201,7 @@ int execute(char *args[])
 	free(executable_path);
 	return (0);
 }
+
 /**
  * not_found - prints if a command is not found
  * @command: command
