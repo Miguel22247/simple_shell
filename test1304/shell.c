@@ -99,7 +99,7 @@ int shell_loop(void)
 		}
 		if (read == 1)
 		{
-			putchar('\n');
+			write(1, "(mcpshell) ", 10);
 		}
 
 		/* change last position for a null byte (because getline doesn't) */
