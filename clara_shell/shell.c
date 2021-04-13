@@ -137,5 +137,6 @@ int execute(char **args __attribute__((unused)))
 
 	pid = fork();
 
+	return;
 }
 
