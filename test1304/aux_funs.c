@@ -60,6 +60,11 @@ int _strcmp(char *s1, char *s2)
 	return (0);
 }
 
+/**
+ * free_tokens - free the tokens
+ * @tokens: token
+ * return: token free
+ */
 void free_tokens(char **tokens)
 {
 	int i = 0;

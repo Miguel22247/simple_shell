@@ -4,6 +4,7 @@
  * @s1: string one
  * @s2: string two
  * @n: an unsigned int
+ * return: two strings concatenated
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {

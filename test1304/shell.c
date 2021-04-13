@@ -6,7 +6,6 @@ int execute(char *args[]);
 * @line: line
 * Return: tokens
 */
-
 char **split_line(char *line)
 {
 	int position = 0;
@@ -15,11 +14,12 @@ char **split_line(char *line)
 	char **tokens = malloc(1024 * sizeof(char *));
 
 	/* border case */
-	if (!tokens) {
+	if (!tokens)
+	{
 		write(STDERR_FILENO, "allocation error", 17);
 		exit(EXIT_FAILURE);
 		free(line);
-}
+	}
 
 	/* get the first token */
 	token = _strdup(strtok(line, s));
@@ -30,7 +30,8 @@ char **split_line(char *line)
 	*/
 
 	/* walk through other tokens */
-	while (token != NULL) {
+	while (token != NULL)
+	{
 		tokens[position] = token;
 		token = _strdup(strtok(NULL, s));
 		position++;
@@ -50,7 +51,7 @@ char **split_line(char *line)
  * Return: 0
  */
 
-int main (int argc __attribute__((unused)), char **argv __attribute__((unused)))
+int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 {
 	/* command loop */
 	shell_loop();
@@ -82,7 +83,7 @@ int shell_loop(void)
 	read = getline(&line, &len, stdin);
 
 	/* check mem */
-	if(!line)
+	if (!line)
 		exit(0);
 
 	/* getline returns -1 if failed, including eof condition */
@@ -97,7 +98,8 @@ int shell_loop(void)
 
 			if (isatty(STDIN_FILENO) != 0)
 				exit(EXIT_SUCCESS);
-			else {
+			else 
+			{
 				perror("Error");
 				exit(EXIT_FAILURE);
 			}
@@ -111,7 +113,8 @@ int shell_loop(void)
 
 		if (isatty(STDIN_FILENO) != 0)
 			exit(EXIT_SUCCESS);
-		else {
+		else 
+		{
 			perror("Error");
 			exit(EXIT_FAILURE);
 		}
@@ -127,18 +130,21 @@ int shell_loop(void)
 	if (!tokens[0])
 		shell_loop();
 	/* Compar to "exit" command */
-	if (!_strcmp(tokens[0], ex)) {
+	if (!_strcmp(tokens[0], ex))
+	{
 		free_tokens(tokens);
 		exit(0);
 	}
 	/* compare to "env" command */
-	if (!_strcmp(tokens[0], env)) {
+	if (!_strcmp(tokens[0], env))
+	{
 		free_tokens(tokens);
 		exit(0);
 	}
 
 
-	while (tokens[i] != NULL){
+	while (tokens[i] != NULL)
+	{
 		printf("%s\n", tokens[i]);
 		free(tokens[i]);
 		i++;
