@@ -1,7 +1,6 @@
 #include "header.h"
 
 int execute(char *args[]);
-void
 /**
 * split_line - parser
 * @line: line
@@ -138,13 +137,8 @@ int shell_loop(void)
 	/* compare to "env" command */
 	if (!_strcmp(tokens[0], env))
 	{
-		    char *envp[];
-			int i;
- 
-			for (i = 0; envp[i] != NULL; i++)
-			{    
-				printf("\n%s", envp[i]);
-			}
+		free_tokens(tokens);
+		exit(0);
 	}
 
 
