@@ -209,7 +209,7 @@ int execute(char *args[])
  */
 int not_found(char *command)
 {
-	write(2, name, strlen(name)); no se que poner aca
+	write(2, name, strlen(name)); /* no se que poner aca*/
 	write(2, ": 1: ", 5);
 	write(2, command, strlen(command));
 	write(2, ": not found\n", 12);
