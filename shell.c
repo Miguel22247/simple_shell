@@ -1,11 +1,11 @@
 #include "shell.h"
 
+int execute(char *args[]);
 /**
 * split_line - parser
 * @line: line
 * Return: tokens
 */
-
 char **split_line(char *line)
 {
 	int position = 0;
@@ -14,24 +14,27 @@ char **split_line(char *line)
 	char **tokens = malloc(1024 * sizeof(char *));
 
 	/* border case */
-	if (!tokens) {
+	if (!tokens)
+	{
 		write(STDERR_FILENO, "allocation error", 17);
 		exit(EXIT_FAILURE);
+		free(line);
 	}
 
 	/* get the first token */
 	token = _strdup(strtok(line, s));
-	
+
 	/**
-	* strtok return pointers to within the string you give it, 
-	* and place \0 bytes at the end of each token 
+	* strtok return pointers to within the string you give it,
+	* and place \0 bytes at the end of each token
 	*/
 
 	/* walk through other tokens */
-	while (token != NULL) {
+	while (token != NULL)
+	{
 		tokens[position] = token;
 		token = _strdup(strtok(NULL, s));
-		position++; 
+		position++;
 	}
 
 	/* reallocate if necessary? */
@@ -43,12 +46,14 @@ char **split_line(char *line)
 
 
 /**
- * shell - Entry point
+ * main - Entry point
+ * @argc: argument count
+ * @argv: argument value
  * description: main function of shell
  * Return: 0
  */
 
-int main (int argc __attribute__((unused)), char **argv __attribute__((unused)))
+int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 {
 	/* command loop */
 	shell_loop();
@@ -57,12 +62,9 @@ int main (int argc __attribute__((unused)), char **argv __attribute__((unused)))
 }
 
 /**
-* shell_loop - FUN
+* shell_loop - THE LOOP :D
 * Return: 0
 */
-
-
-
 int shell_loop(void)
 {
 	char *line = NULL;
@@ -70,65 +72,96 @@ int shell_loop(void)
 	size_t len = 1024;
 	int read, i = 0;
 	char **tokens;
-	
+	char env[] = "envitonment variables";
+
 	/* Command loop */
+	/* Prompt */
+	write(1, "(mcpshell) ", 11);
 
-		/* Prompt */
-		_puts("(mcpshell) ");
+	/* Read line, getline allocates mem */
+	read = getline(&line, &len, stdin);
 
-		/* Read line, getline allocates mem */
-		read = getline(&line, &len, stdin);
+	/* check mem */
+	if (!line)
+		exit(0);
 
-		/* check mem */
-		if(!line)
-			exit(0);
+	/* getline returns -1 if failed, including eof condition */
 
-		/* getline returns -1 if failed, including eof condition */
+	if (read == -1)
+	{
+		free(line);
+
 		if (read == -1)
 		{
 			free(line);
 
 			if (isatty(STDIN_FILENO) != 0)
 				exit(EXIT_SUCCESS);
-			else {
+			else
+			{
 				perror("Error");
 				exit(EXIT_FAILURE);
 			}
 		}
+		if (read == 1)
+		{
 
-		/* change last position for a null byte (because getline doesn't) */
-		if (line[read - 1] == '\n' || line[read - 1] == '\t')
-			line[read - 1] = '\0';
+			write(1, "(mcpshell) ", 10);
 
-
-		/* parser function: separates different arguments from stream*/
-		tokens = split_line(line);
-
-		/* compare to command */
-		if (!_strcmp(tokens[0], ex)) {
-			free_tokens(tokens);
-			exit(0);
 		}
 
-		while (tokens[i] != NULL){
-			printf("%s\n", tokens[i]);
-			free(tokens[i]);
-			i++;
+		if (isatty(STDIN_FILENO) != 0)
+			exit(EXIT_SUCCESS);
+		else
+		{
+			perror("Error");
+			exit(EXIT_FAILURE);
 		}
+	}
 
-		/* execute */
+	/* change last position for a null byte (because getline doesn't) */
+	if (line[read - 1] == '\n' || line[read - 1] == '\t')
+		line[read - 1] = '\0';
 
-		free(tokens);
 
-		/* recursion for infinte loop */
+	/* parser function: separates different arguments from stream*/
+	tokens = split_line(line);
+	if (!tokens[0])
 		shell_loop();
+	/* Compar to "exit" command */
+	if (!_strcmp(tokens[0], ex))
+	{
+		free_tokens(tokens);
+		exit(0);
+	}
+	/* compare to "env" command */
+	if (!_strcmp(tokens[0], env))
+	{
+		free_tokens(tokens);
+		exit(0);
+	}
+
+
+	while (tokens[i] != NULL)
+	{
+		printf("%s\n", tokens[i]);
+		free(tokens[i]);
+		i++;
+	}
+
+	/* execute */
+
+	free(tokens);
+
+	/* recursion for infinte loop */
+	shell_loop();
 	return (0);
 }
 
-
 /**
-*
-*
+* execute - entry point
+* @args: arguments
+* Return: an execution or error
 */
 int execute(char *args[])
 {
@@ -138,14 +171,14 @@ int execute(char *args[])
 	int status;
 
 	command = args[];
-	executable_path = /*path_finder*/;
-	
+	executable_path = path_finder;
+
 	if (executable_path == NULL)
 	{
 		not_found(command);
 		return (3);
 	}
-	
+
 	pid = fork();
 
 	if (pid < 0)
@@ -169,9 +202,14 @@ int execute(char *args[])
 	return (0);
 }
 
+/**
+ * not_found - prints if a command is not found
+ * @command: command
+ * Return: an error message
+ */
 int not_found(char *command)
 {
-	write(2, name, strlen(name)); /**no se que poner aca*/
+	write(2, name, strlen(name)); no se que poner aca
 	write(2, ": 1: ", 5);
 	write(2, command, strlen(command));
 	write(2, ": not found\n", 12);
