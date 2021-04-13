@@ -46,7 +46,9 @@ char **split_line(char *line)
 
 
 /**
- * shell - Entry point
+ * main - Entry point
+ * @argc: argument count
+ * @argv: argument value
  * description: main function of shell
  * Return: 0
  */
@@ -60,12 +62,9 @@ int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 }
 
 /**
-* shell_loop - FUN
+* shell_loop - THE LOOP :D
 * Return: 0
 */
-
-
-
 int shell_loop(void)
 {
 	char *line = NULL;
@@ -98,7 +97,7 @@ int shell_loop(void)
 
 			if (isatty(STDIN_FILENO) != 0)
 				exit(EXIT_SUCCESS);
-			else 
+			else
 			{
 				perror("Error");
 				exit(EXIT_FAILURE);
@@ -113,7 +112,7 @@ int shell_loop(void)
 
 		if (isatty(STDIN_FILENO) != 0)
 			exit(EXIT_SUCCESS);
-		else 
+		else
 		{
 			perror("Error");
 			exit(EXIT_FAILURE);
@@ -159,11 +158,11 @@ int shell_loop(void)
 	return (0);
 }
 
-
 /*
-*
-*
-*
+* exectute - a function that executes
+* @args: arguments
+* return: an execution or error
+*/
 int execute(char *args[])
 {
 	char *executable_path = NULL;
@@ -202,7 +201,11 @@ int execute(char *args[])
 	free(executable_path);
 	return (0);
 }
-
+/**
+ * not_found - prints if a command is not found
+ * @command: command
+ * return: an error message
+ */
 int not_found(char *command)
 {
 	write(2, name, strlen(name)); no se que poner aca
@@ -210,4 +213,3 @@ int not_found(char *command)
 	write(2, command, strlen(command));
 	write(2, ": not found\n", 12);
 }
-*/
