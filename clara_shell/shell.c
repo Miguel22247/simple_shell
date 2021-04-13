@@ -132,20 +132,10 @@ int shell_loop(void)
 */
 int execute(char **args __attribute__((unused)))
 {
-	pid_t pid, ppid;
+	pid_t pid /*ppid*/;
 	/*int status;*/
 
 	pid = fork();
 
-	if (pid == 0)
-	{
-		stat == 0;
-		execve();
-	}
-	if (pid != 0)
-	{
-		wait(pid);
-	}
-	return;
 }
 
