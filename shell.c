@@ -72,7 +72,7 @@ int shell_loop(void)
 	size_t len = 1024;
 	int read, i = 0;
 	char **tokens;
-	char env[] = "environment variables";
+	char env[] = "environment variables"; /*    ?????  */
 
 	/* Command loop */
 	/* Prompt */
@@ -86,15 +86,14 @@ int shell_loop(void)
 		exit(0);
 
 	/* getline returns -1 if failed, including eof condition */
-
-	if (read == -1)
-	{
-		free(line);
-
-		if (read == -1)
-		{
-			free(line);
-
+        if (read == -1)
+        {
+            free(line);
+            
+            /**
+            * isatty returns 1 if fd is an open file descriptor referring to
+            * a terminal; otherwise 0 is returned
+            */
 			if (isatty(STDIN_FILENO) != 0)
 				exit(EXIT_SUCCESS);
 			else
@@ -103,38 +102,23 @@ int shell_loop(void)
 				exit(EXIT_FAILURE);
 			}
 		}
-		if (read == 1)
-		{
-
-			write(1, "(mcpshell) ", 10);
-
-		}
-
-		if (isatty(STDIN_FILENO) != 0)
-			exit(EXIT_SUCCESS);
-		else
-		{
-			perror("Error");
-			exit(EXIT_FAILURE);
-		}
-	}
 
 	/* change last position for a null byte (because getline doesn't) */
 	if (line[read - 1] == '\n' || line[read - 1] == '\t')
 		line[read - 1] = '\0';
 
-
 	/* parser function: separates different arguments from stream*/
 	tokens = split_line(line);
 	if (!tokens[0])
 		shell_loop();
-	/* Compare to "exit" command */
+
+	/* Compar to "exit" command */
 	if (!_strcmp(tokens[0], ex))
 	{
 		free_tokens(tokens);
 		exit(0);
 	}
-	/* Compare to "env" command */
+	/* compare to "env" command             ???????? */
 	if (!_strcmp(tokens[0], env))
 	{
 		free_tokens(tokens);
@@ -144,12 +128,12 @@ int shell_loop(void)
 
 	while (tokens[i] != NULL)
 	{
-		printf("%s\n", tokens[i]);
+		printf("%s\n", tokens[i]); /* change printf    !!!!!!! */
 		free(tokens[i]);
 		i++;
 	}
 
-	/* execute */
+	/* execute int execute(char *args[]);                   '?????*/
 
 	free(tokens);
 
