@@ -72,7 +72,7 @@ int shell_loop(void)
 	size_t len = 1024;
 	int read, i = 0;
 	char **tokens;
-	char env[] = "environment variables"; /*    ?????  */
+	char *env = getenv(); /*???? */
 
 	/* Command loop */
 	/* Prompt */
@@ -121,8 +121,16 @@ int shell_loop(void)
 	/* compare to "env" command             ???????? */
 	if (!_strcmp(tokens[0], env))
 	{
-		free_tokens(tokens);
-		exit(0);
+		int j, len = 0;
+
+		for (j = 0; env[j] != NULL; j++)
+		{
+			len = _strlen(env[j]);
+			write(1, env[j], len);
+			write(1, "\n", 1);
+		}
+		free(line);
+		shell_loop();
 	}
 
 
