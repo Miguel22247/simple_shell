@@ -126,7 +126,7 @@ int shell_loop(void)
 
 		for (i = 0; env[i] != NULL; i++)
 		{
-			len = _strlen(env[i]);
+			len = strlen(env[i]);
 			write(1, env[i], len);
 			write(1, "\n", 1);
 		}
