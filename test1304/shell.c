@@ -53,10 +53,10 @@ char **split_line(char *line)
  * Return: 0
  */
 
-int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
+int main(int argc __attribute__((unused)), char **argv __attribute__((unused)), char **env)
 {
 	/* command loop */
-	shell_loop();
+	shell_loop(env);
 
 	return (EXIT_SUCCESS);
 }
@@ -65,26 +65,22 @@ int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 * shell_loop - THE LOOP :D
 * Return: 0
 */
-int shell_loop(void)
+int shell_loop(char **env)
 {
 	char *line = NULL;
 	char ex[] = "exit";
 	size_t len = 1024;
 	int read, i = 0;
 	char **tokens;
-	char *env = getenv(); /*???? */
 
 	/* Command loop */
 	/* Prompt */
 	write(1, "(mcpshell) ", 11);
-
 	/* Read line, getline allocates mem */
 	read = getline(&line, &len, stdin);
-
 	/* check mem */
 	if (!line)
 		exit(0);
-
 	/* getline returns -1 if failed, including eof condition */
 			if (read == -1)
 			{
