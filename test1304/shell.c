@@ -95,6 +95,10 @@ int shell_loop(void)
 		{
 			free(line);
 
+            /**
+            * isatty returns 1 if fd is an open file descriptor referring to
+            * a terminal; otherwise 0 is returned
+            */
 			if (isatty(STDIN_FILENO) != 0)
 				exit(EXIT_SUCCESS);
 			else
