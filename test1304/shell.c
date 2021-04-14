@@ -107,11 +107,11 @@ int shell_loop(void)
 	if (line[read - 1] == '\n' || line[read - 1] == '\t')
 		line[read - 1] = '\0';
 
-
 	/* parser function: separates different arguments from stream*/
 	tokens = split_line(line);
 	if (!tokens[0])
 		shell_loop();
+        
 	/* Compar to "exit" command */
 	if (!_strcmp(tokens[0], ex))
 	{
