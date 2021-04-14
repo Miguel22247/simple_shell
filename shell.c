@@ -122,12 +122,12 @@ int shell_loop(void)
 	if (!_strcmp(tokens[0], env))
 	{
 		int i, len = 0;
-		char **env;
+		char **environ;
 
-		for (i = 0; env[i] != NULL; i++)
+		for (i = 0; environ[i] != NULL; i++)
 		{
-			len = _strlen(env[i]);
-			write(1, env[i], len);
+			len = _strlen(environ[i]);
+			write(1, environ[i], len);
 			write(1, "\n", 1);
 		}
 		free_tokens(tokens);
