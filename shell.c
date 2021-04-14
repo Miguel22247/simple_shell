@@ -107,7 +107,9 @@ int main(void)
 	/* compare to "env" command             ???????? */
 	if (!_strcmp(tokens[0], environ))
 	{
-		return(env);
+		char *enviroment = env;
+
+		return(enviroment);
 	}
 
 
@@ -133,7 +135,7 @@ void env(int argc, char *argv[], char * envp[])
 
 	for (i = 0; envp[i] != NULL; i++)
 	{
-		printf(%s\n, envp[i]);
+		printf(\n%s, envp[i]);
 	}
 	
 }
