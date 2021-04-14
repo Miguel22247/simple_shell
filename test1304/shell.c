@@ -49,6 +49,7 @@ char **split_line(char *line)
  * main - Entry point
  * @argc: argument count
  * @argv: argument value
+ * @env: enviroment var
  * description: main function of shell
  * Return: 0
  */
