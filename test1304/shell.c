@@ -72,7 +72,7 @@ int shell_loop(void)
 	size_t len = 1024;
 	int read, i = 0;
 	char **tokens;
-	char env[] = "environment variables";
+	char env[] = "environment variables"; /*    ?????  */
 
 	/* Command loop */
 	/* Prompt */
@@ -111,14 +111,14 @@ int shell_loop(void)
 	tokens = split_line(line);
 	if (!tokens[0])
 		shell_loop();
-        
+
 	/* Compar to "exit" command */
 	if (!_strcmp(tokens[0], ex))
 	{
 		free_tokens(tokens);
 		exit(0);
 	}
-	/* compare to "env" command */
+	/* compare to "env" command             ???????? */
 	if (!_strcmp(tokens[0], env))
 	{
 		free_tokens(tokens);
@@ -128,12 +128,12 @@ int shell_loop(void)
 
 	while (tokens[i] != NULL)
 	{
-		printf("%s\n", tokens[i]);
+		printf("%s\n", tokens[i]); /* change printf    !!!!!!! */
 		free(tokens[i]);
 		i++;
 	}
 
-	/* execute */
+	/* execute int execute(char *args[]);                   '?????*/
 
 	free(tokens);
 
