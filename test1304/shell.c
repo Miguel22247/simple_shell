@@ -54,8 +54,9 @@ char **split_line(char *line)
  * Return: 0
  */
 
-int main(int argc __attribute__((unused)), char **argv __attribute__((unused)), char **env)
+int main(int argc __attribute__((unused)), char **argv, char **env)
 {
+	argv = argv;
 	/* command loop */
 	shell_loop(env);
 
@@ -117,7 +118,7 @@ int shell_loop(char **env)
 		exit(0);
 	}
 	/* compare to "env" command             ???????? */
-	if (!_strcmp(tokens[0], env))
+	if (!_strcmp(tokens[0], &env))
 	{
 		int j, len = 0;
 
