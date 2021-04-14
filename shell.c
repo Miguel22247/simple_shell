@@ -1,7 +1,6 @@
 #include "header.h"
 
 int execute(char *args[]);
-void env(int argc, char *argv[], char * envp[]);
 /**
 * split_line - parser
 * @line: line
@@ -46,19 +45,34 @@ char **split_line(char *line)
 }
 
 
+/**
+ * main - Entry point
+ * @argc: argument count
+ * @argv: argument value
+ * description: main function of shell
+ * Return: 0
+ */
+
+int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
+{
+	/* command loop */
+	shell_loop();
+
+	return (EXIT_SUCCESS);
+}
 
 /**
-* main - THE LOOP :D
+* shell_loop - THE LOOP :D
 * Return: 0
 */
-int main(void)
+int shell_loop(void)
 {
 	char *line = NULL;
 	char ex[] = "exit";
 	size_t len = 1024;
 	int read, i = 0;
 	char **tokens;
-	char environ[] = "env"; /*    ?????  */
+	char env[] = "environment variables"; /*    ?????  */
 
 	/* Command loop */
 	/* Prompt */
@@ -96,7 +110,7 @@ int main(void)
 	/* parser function: separates different arguments from stream*/
 	tokens = split_line(line);
 	if (!tokens[0])
-		main();
+		shell_loop();
 
 	/* Compar to "exit" command */
 	if (!_strcmp(tokens[0], ex))
@@ -105,14 +119,10 @@ int main(void)
 		exit(0);
 	}
 	/* compare to "env" command             ???????? */
-	if (!_strcmp(tokens[0], environ))
+	if (!_strcmp(tokens[0], env))
 	{
-			int i;
-			char * envp[];
-			for (i = 0; envp[i] != NULL; i++)
-			{
-				printf(%s, envp[i]);
-			}
+		free_tokens(tokens);
+		exit(0);
 	}
 
 
@@ -128,12 +138,6 @@ int main(void)
 	free(tokens);
 
 	/* recursion for infinte loop */
-	main();
+	shell_loop();
 	return (0);
-}
-
-void env(int argc, char *argv[], char * envp[])
-{
-
-	
 }
