@@ -86,14 +86,14 @@ int shell_loop(void)
 		exit(0);
 
 	/* getline returns -1 if failed, including eof condition */
-        if (read == -1)
-        {
-            free(line);
-            
-            /**
-            * isatty returns 1 if fd is an open file descriptor referring to
-            * a terminal; otherwise 0 is returned
-            */
+		if (read == -1)
+		{
+			 free(line);
+
+			/**
+			* isatty returns 1 if fd is an open file descriptor referring to
+			* a terminal; otherwise 0 is returned
+			*/
 			if (isatty(STDIN_FILENO) != 0)
 				exit(EXIT_SUCCESS);
 			else
@@ -123,7 +123,7 @@ int shell_loop(void)
 	{
 		int i, len = 0;
 		char **env;
-		
+
 		for (i = 0; env[i] != NULL; i++)
 		{
 			len = _strlen(env[i]);
@@ -131,7 +131,7 @@ int shell_loop(void)
 			write(1, "\n", 1);
 		}
 		free_tokens(tokens);
-		return(0);
+		return (0);
 	}
 
 
