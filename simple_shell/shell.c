@@ -17,8 +17,8 @@ char **split_line(char *line)
 	if (!tokens)
 	{
 		write(STDERR_FILENO, "allocation error", 17);
-		exit(EXIT_FAILURE);
 		free(line);
+		exit(EXIT_FAILURE);
 	}
 
 	/* get the first token */
@@ -67,12 +67,9 @@ int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 */
 int shell_loop(void)
 {
-	char *line = NULL;
-	char ex[] = "exit";
 	size_t len = 1024;
-	int read, i = 0;
-	char **tokens;
-	char *env   /* = getenv(); ???? */
+	int read, i = 0, j;
+	char **tokens, *env, ex[] = "exit", *line = NULL;
 
 	/* Command loop */
 	/* Prompt */
@@ -118,19 +115,19 @@ int shell_loop(void)
 		free_tokens(tokens);
 		exit(0);
 	}
-	/* compare to "env" command             ???????? */
-	if (!_strcmp(tokens[0], env))
+	/* compare to "env" command             ???????
+	if (!_strcmp(tokens[0], "env"))
 	{
-		unsigned int j;
-
-		j = 0;
-		while (env[j] != NULL)
+		while (ev)
 		{
-			printf("%s\n", env[j]);
-			j++;
+			write(1, ev, strlen(ev));
+			write(1, "\n", 1);
+		        ev = envi[++i];
 		}
-		return (0);
-		free(env);
+		shell_loop();
+
+                /*  unsigned int j;
+
 
 		/*
 		int j, len = 0;
@@ -142,9 +139,9 @@ int shell_loop(void)
 			write(1, "\n", 1);
 		}
 		free(line);
-		shell_loop();*/
+		shell_loop();
 	}
-
+*/
 
 	while (tokens[i] != NULL)
 	{
