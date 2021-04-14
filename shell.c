@@ -131,7 +131,7 @@ int shell_loop(void)
 			write(1, "\n", 1);
 		}
 		free_tokens(tokens);
-		return (0);
+		shell_loop();
 	}
 
 
