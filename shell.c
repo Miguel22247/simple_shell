@@ -121,8 +121,17 @@ int shell_loop(void)
 	/* compare to "env" command             ???????? */
 	if (!_strcmp(tokens[0], env))
 	{
+		int i, len = 0;
+		char **env;
+		
+		for (i = 0; env[i] != NULL; i++)
+		{
+			len = _strlen(env[i]);
+			write(1, env[i], len);
+			write(1, "\n", 1);
+		}
 		free_tokens(tokens);
-		exit(0);
+		return(0);
 	}
 
 
