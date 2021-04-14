@@ -64,6 +64,7 @@ int main(int argc __attribute__((unused)), char **argv __attribute__((unused)), 
 /**
 * shell_loop - THE LOOP :D
 * Return: 0
+*
 */
 int shell_loop(char **env)
 {
