@@ -86,15 +86,10 @@ int shell_loop(void)
 		exit(0);
 
 	/* getline returns -1 if failed, including eof condition */
-
-	if (read == -1)
-	{
-		free(line); /* ? */
-
-		if (read == -1)
-		{
-			free(line);
-
+        if (read == -1)
+        {
+            free(line);
+            
             /**
             * isatty returns 1 if fd is an open file descriptor referring to
             * a terminal; otherwise 0 is returned
@@ -107,21 +102,6 @@ int shell_loop(void)
 				exit(EXIT_FAILURE);
 			}
 		}
-		if (read == 1)
-		{
-
-			write(1, "(mcpshell) ", 10);
-
-		}
-
-		if (isatty(STDIN_FILENO) != 0)
-			exit(EXIT_SUCCESS);
-		else
-		{
-			perror("Error");
-			exit(EXIT_FAILURE);
-		}
-	}
 
 	/* change last position for a null byte (because getline doesn't) */
 	if (line[read - 1] == '\n' || line[read - 1] == '\t')
