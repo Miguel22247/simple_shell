@@ -129,7 +129,7 @@ int main(void)
 
 void env(int argc, char *argv[], char * envp[])
 {
-	int n;
+	int i;
 
 	for (i = 0; envp[i] != NULL; i++)
 	{
