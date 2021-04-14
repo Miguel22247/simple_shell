@@ -14,7 +14,7 @@
 #define BUFSIZE 1024
 
 /* Functions */
-int shell_loop(void);
+int shell_loop(char **);
 
 /* Aux functions */
 void _puts(char *str);
