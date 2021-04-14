@@ -86,14 +86,14 @@ int shell_loop(void)
 		exit(0);
 
 	/* getline returns -1 if failed, including eof condition */
-        if (read == -1)
-        {
-            free(line);
-            
-            /**
-            * isatty returns 1 if fd is an open file descriptor referring to
-            * a terminal; otherwise 0 is returned
-            */
+			if (read == -1)
+			{
+				free(line);
+				
+			/**
+			* isatty returns 1 if fd is an open file descriptor referring to
+			* a terminal; otherwise 0 is returned
+			*/
 			if (isatty(STDIN_FILENO) != 0)
 				exit(EXIT_SUCCESS);
 			else
