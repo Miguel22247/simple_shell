@@ -8,7 +8,7 @@
 simple_shell tries to reproduce the original shell
 
 .SH BUILTINS
-.B env 
+.B env
 - prints enviroment
 
 .B exit
