@@ -51,7 +51,7 @@ char **split_line(char *line)
 * main - THE LOOP :D
 * Return: 0
 */
-int main(void)
+int main(int argc, char *argv[], char * envp[])
 {
 	char *line = NULL;
 	char ex[] = "exit";
@@ -107,9 +107,12 @@ int main(void)
 	/* compare to "env" command             ???????? */
 	if (!_strcmp(tokens[0], environ))
 	{
-		char *enviroment = env;
+		int i;
 
-		return(enviroment);
+		for (i = 0; envp[i] != NULL; i++)
+		{
+			printf("\n%s", envp[i]);
+		}
 	}
 
 
@@ -127,15 +130,4 @@ int main(void)
 	/* recursion for infinte loop */
 	main();
 	return (0);
-}
-
-void env(int argc, char *argv[], char * envp[])
-{
-	int i;
-
-	for (i = 0; envp[i] != NULL; i++)
-	{
-		printf("\n%s", envp[i]);
-	}
-	
 }
