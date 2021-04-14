@@ -135,7 +135,7 @@ void env(int argc, char *argv[], char * envp[])
 
 	for (i = 0; envp[i] != NULL; i++)
 	{
-		printf(\n%s, envp[i]);
+		printf("\n%s", envp[i]);
 	}
 	
 }
