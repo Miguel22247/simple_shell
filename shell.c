@@ -58,7 +58,7 @@ int main(void)
 	size_t len = 1024;
 	int read, i = 0;
 	char **tokens;
-	char env[] = "environment variables"; /*    ?????  */
+	char environ[] = "env"; /*    ?????  */
 
 	/* Command loop */
 	/* Prompt */
@@ -105,7 +105,7 @@ int main(void)
 		exit(0);
 	}
 	/* compare to "env" command             ???????? */
-	if (!_strcmp(tokens[0], env))
+	if (!_strcmp(tokens[0], environ))
 	{
 		return(env);
 	}
