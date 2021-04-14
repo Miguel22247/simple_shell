@@ -20,9 +20,7 @@ Usage
 Once executed, the compiled file will bring up a prompt that executes built-in commands with arguments.
 
 ./hsh
-($) ls -l
-
-## Exit
+(mcpshell) ls -l
 
 
 ## Files
@@ -35,7 +33,7 @@ Every file contains the functions that will be used to work with the main file:
 * aux_funs.c: storage the auxiliar functions like string related functions
 
 ## Bugs
-Not known yet
+A lot of bugs yet but works ehm perfectly
 
 ## Authors
 This program was written by:
