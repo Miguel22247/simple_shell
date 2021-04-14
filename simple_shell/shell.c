@@ -72,7 +72,7 @@ int shell_loop(void)
 	size_t len = 1024;
 	int read, i = 0;
 	char **tokens;
-	char *env = getenv(); /*???? */
+	char *env   /* = getenv(); ???? */
 
 	/* Command loop */
 	/* Prompt */
@@ -121,6 +121,18 @@ int shell_loop(void)
 	/* compare to "env" command             ???????? */
 	if (!_strcmp(tokens[0], env))
 	{
+		unsigned int j;
+
+		j = 0;
+		while (env[j] != NULL)
+		{
+			printf("%s\n", env[j]);
+			j++;
+		}
+		return (0);
+		free(env);
+
+		/*
 		int j, len = 0;
 
 		for (j = 0; env[j] != NULL; j++)
@@ -130,7 +142,7 @@ int shell_loop(void)
 			write(1, "\n", 1);
 		}
 		free(line);
-		shell_loop();
+		shell_loop();*/
 	}
 
 
