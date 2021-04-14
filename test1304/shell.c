@@ -108,7 +108,7 @@ int shell_loop(char **env)
 	/* parser function: separates different arguments from stream*/
 	tokens = split_line(line);
 	if (!tokens[0])
-		shell_loop();
+		shell_loop(env);
 
 	/* Compar to "exit" command */
 	if (!_strcmp(tokens[0], ex))
@@ -128,7 +128,7 @@ int shell_loop(char **env)
 			write(1, "\n", 1);
 		}
 		free(line);
-		shell_loop();
+		shell_loop(env);
 	}
 
 
@@ -144,6 +144,6 @@ int shell_loop(char **env)
 	free(tokens);
 
 	/* recursion for infinte loop */
-	shell_loop();
+	shell_loop(env);
 	return (0);
 }
