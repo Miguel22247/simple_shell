@@ -45,27 +45,12 @@ char **split_line(char *line)
 }
 
 
-/**
- * main - Entry point
- * @argc: argument count
- * @argv: argument value
- * description: main function of shell
- * Return: 0
- */
-
-int main(void)
-{
-	/* command loop */
-	shell_loop();
-
-	return (EXIT_SUCCESS);
-}
 
 /**
-* shell_loop - THE LOOP :D
+* main - THE LOOP :D
 * Return: 0
 */
-int shell_loop(void)
+int main(void)
 {
 	char *line = NULL;
 	char ex[] = "exit";
@@ -110,7 +95,7 @@ int shell_loop(void)
 	/* parser function: separates different arguments from stream*/
 	tokens = split_line(line);
 	if (!tokens[0])
-		shell_loop();
+		main();
 
 	/* Compar to "exit" command */
 	if (!_strcmp(tokens[0], ex))
@@ -138,6 +123,6 @@ int shell_loop(void)
 	free(tokens);
 
 	/* recursion for infinte loop */
-	shell_loop();
+	main();
 	return (0);
 }

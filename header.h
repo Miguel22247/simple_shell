@@ -10,11 +10,14 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 
+
+/* external variables */
+extern char environ;
 /* Constants */
 #define BUFSIZE 1024
 
 /* Functions */
-int shell_loop(void);
+int main(void);
 
 /* Aux functions */
 void _puts(char *str);
