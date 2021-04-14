@@ -72,7 +72,7 @@ int shell_loop(void)
 	size_t len = 1024;
 	int read, i = 0;
 	char **tokens;
-	char env[] = "envitonment variables";
+	char env[] = "environment variables";
 
 	/* Command loop */
 	/* Prompt */
