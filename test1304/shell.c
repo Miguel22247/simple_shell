@@ -89,7 +89,7 @@ int shell_loop(void)
 			if (read == -1)
 			{
 				free(line);
-				
+
 			/**
 			* isatty returns 1 if fd is an open file descriptor referring to
 			* a terminal; otherwise 0 is returned
