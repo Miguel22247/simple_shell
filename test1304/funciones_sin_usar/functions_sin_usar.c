@@ -5,14 +5,14 @@
 * @args: arguments
 * Return: an execution or error
 */
-int execute(char *args[] __attribute__((unused)))
+int execute(char *commandarray[])
 {
 	char *executable_path = NULL;
 	char *command = NULL;
 	pid_t pid;
 	int status;
 
-	command = args[0];
+	command = commandarray[0];
 	/* executable_path = path_finder; */
 
 	if (executable_path == NULL)

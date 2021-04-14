@@ -1,6 +1,7 @@
 #include "header.h"
 
 int execute(char *args[]);
+void env(int argc, char *argv[], char * envp[]);
 /**
 * split_line - parser
 * @line: line
@@ -106,8 +107,7 @@ int main(void)
 	/* compare to "env" command             ???????? */
 	if (!_strcmp(tokens[0], env))
 	{
-		free_tokens(tokens);
-		exit(0);
+		return(env);
 	}
 
 
@@ -125,4 +125,15 @@ int main(void)
 	/* recursion for infinte loop */
 	main();
 	return (0);
+}
+
+void env(int argc, char *argv[], char * envp[])
+{
+	int n;
+
+	for (i = 0; envp[i] != NULL; i++)
+	{
+		printf(%s\n, envp[i]);
+	}
+	
 }
