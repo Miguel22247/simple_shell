@@ -72,7 +72,7 @@ int shell_loop(void)
 	size_t len = 1024;
 	int read, i = 0;
 	char **tokens;
-	char env[] = "envitonment variables";
+	char env[] = "environment variables";
 
 	/* Command loop */
 	/* Prompt */
@@ -89,7 +89,7 @@ int shell_loop(void)
 
 	if (read == -1)
 	{
-		free(line);
+		free(line); /* ? */
 
 		if (read == -1)
 		{
