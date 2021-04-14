@@ -1,4 +1,5 @@
 #include "header.h"
+
 /**
 * execute - entry point
 * @args: arguments
@@ -34,7 +35,7 @@ int execute(char *args[] __attribute__((unused)))
 
 	if (pid == 0)
 	{
-		/* execve(); */
+		execve();
 		perror("Error: ");
 		exit(1);
 	}

@@ -128,13 +128,13 @@ int shell_loop(void)
 	tokens = split_line(line);
 	if (!tokens[0])
 		shell_loop();
-	/* Compar to "exit" command */
+	/* Compare to "exit" command */
 	if (!_strcmp(tokens[0], ex))
 	{
 		free_tokens(tokens);
 		exit(0);
 	}
-	/* compare to "env" command */
+	/* Compare to "env" command */
 	if (!_strcmp(tokens[0], env))
 	{
 		free_tokens(tokens);
