@@ -14,7 +14,7 @@
 #define BUFSIZE 1024
 
 /* Functions */
-int shell_loop(char **);
+int shell_loop(char **env);
 
 /* Aux functions */
 void _puts(char *str);
@@ -24,4 +24,5 @@ int _strcmp(char *s1, char *s2);
 void free_tokens(char **tokens);
 char *string_nconcat(char *s1, char *s2, unsigned int n);
 int not_found(char *command);
+int _strlen(char *s);
 #endif
