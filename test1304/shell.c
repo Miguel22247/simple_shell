@@ -117,27 +117,27 @@ int shell_loop(char **env)
 		shell_loop(env);
 	}
 	/* Compare to "exit" command */
-	if (!_strcmp(tokens[0], ex))
-		{
-			free_tokens(tokens);
-			exit(0);
-		}
+		if (!_strcmp(tokens[0], ex))
+			{
+				free_tokens(tokens);
+				exit(0);
+			}
 	/* compare to "env" command             ???????? */
 	path = path_finder(env);
 	/* split_line(path, "=:"); */
-	if (!_strcmp(tokens[0], path))
-		{
-			int j, len = 0;
+		if (!_strcmp(tokens[0], path))
+			{
+				int j, len = 0;
 
-			for (j = 0; env[j] != NULL; j++)
-				{
-					len = _strlen(env[j]);
-					write(1, env[j], len);
-					write(1, "\n", 1);
-				}
-			free(line);
-			shell_loop(env);
-		}
+				for (j = 0; env[j] != NULL; j++)
+					{
+						len = _strlen(env[j]);
+						write(1, env[j], len);
+						write(1, "\n", 1);
+					}
+				free(line);
+				shell_loop(env);
+			}
 
 
 	while (tokens[i] != NULL)
