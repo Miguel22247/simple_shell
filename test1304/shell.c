@@ -83,7 +83,7 @@ int shell_loop(char **env)
 	write(1, "(mcpshell) ", 11);
 	/* Read line, getline allocates mem */
 	read = getline(&line, &len, stdin);
-	printf("%s\n", read);
+	printf("%i\n", read);
 	/* check mem */
 	if (!line)
 		exit(0);
