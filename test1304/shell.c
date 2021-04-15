@@ -107,7 +107,8 @@ int shell_loop(char **env)
 	/* change last position for a null byte (because getline doesn't) */
 	if (line[read - 1] == '\n' || line[read - 1] == '\t')
 		line[read - 1] = '\0';
-
+	if (line == '\n')
+		free(line);
 	/* parser function: separates different arguments from stream*/
 	tokens = split_line(line, " ");
 	if (!tokens[0])
