@@ -6,10 +6,10 @@ int execute(char *args[]);
 * @line: line
 * Return: tokens
 */
-char **split_line(char *line)
+char **split_line(char *line, const char *delim)
 {
 	int position = 0;
-	const char s[] = " ";
+	/* const char s[] = " "; */
 	char *token;
 	char **tokens = malloc(1024 * sizeof(char *));
 
@@ -22,7 +22,7 @@ char **split_line(char *line)
 	}
 
 	/* get the first token */
-	token = _strdup(strtok(line, s));
+	token = _strdup(strtok(line, delim));
 
 	/**
 	* strtok return pointers to within the string you give it,
@@ -33,7 +33,7 @@ char **split_line(char *line)
 	while (token != NULL)
 	{
 		tokens[position] = token;
-		token = _strdup(strtok(NULL, s));
+		token = _strdup(strtok(NULL, delim));
 		position++;
 	}
 
@@ -109,7 +109,7 @@ int shell_loop(char **env)
 		line[read - 1] = '\0';
 
 	/* parser function: separates different arguments from stream*/
-	tokens = split_line(line);
+	tokens = split_line(line, " ");
 	if (!tokens[0])
 		shell_loop(env);
 
@@ -121,6 +121,7 @@ int shell_loop(char **env)
 	}
 	/* compare to "env" command             ???????? */
 	path = path_finder(env);
+	/* split_line(path, "=:"); */
 	if (!_strcmp(tokens[0], path)
 	{
 		int j, len = 0;
