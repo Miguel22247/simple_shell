@@ -54,6 +54,6 @@ char *path_finder(char **env)
 		{
 			return (env[i]);
 		}
-		
 	}
+	return (env[i]);
 }
