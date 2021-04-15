@@ -45,9 +45,9 @@ char *path_finder(char **env)
 	int i, j;
 	char *path = "PATH=";
 
-	for ( i = 0; env[i] != NULL; i++)
+	for( i = 0; env[i] != NULL; i++)
 	{
-		for ( j = 0; path[j] == env[i][j]; j++)
+		for( j = 0; path[j] == env[i][j]; j++)
 		{
 		}
 		if (j == 4)
