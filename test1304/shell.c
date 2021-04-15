@@ -111,13 +111,12 @@ int shell_loop(char **env)
 		/* free(line); */
 	/* parser function: separates different arguments from stream*/
 	tokens = split_line(line, " ");
-	if (!tokens[0]){
+	if (!tokens[0])
+	{
 		free_tokens(tokens);
 		shell_loop(env);
 	}
-		
-
-	/* Compar to "exit" command */
+	/* Compare to "exit" command */
 	if (!_strcmp(tokens[0], ex))
 		{
 			free_tokens(tokens);
