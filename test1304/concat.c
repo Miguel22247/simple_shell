@@ -40,3 +40,20 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	return (ret);
 }
 
+char *path_finder(char **env)
+{
+	int i, j;
+	char *path = "PATH=";
+
+	for ( i = 0; env[i] != NULL; i++)
+	{
+		for ( j = 0; path[j] == env[i][j]; j++)
+		{
+		}
+		if (j == 4)
+		{
+			return (env[i]);
+		}
+		
+	}
+}

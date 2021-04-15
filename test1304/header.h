@@ -25,4 +25,5 @@ void free_tokens(char **tokens);
 char *string_nconcat(char *s1, char *s2, unsigned int n);
 int not_found(char *command);
 int _strlen(char *s);
+char *path_finder(char **env);
 #endif

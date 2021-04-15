@@ -119,7 +119,7 @@ int shell_loop(char **env)
 		exit(0);
 	}
 	/* compare to "env" command             ???????? */
-	if (!_strcmp(tokens[0], &env))
+	if (!_strcmp(tokens[0], path_finder(env))
 	{
 		int j, len = 0;
 
