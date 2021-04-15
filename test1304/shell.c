@@ -76,6 +76,7 @@ int shell_loop(char **env)
 	size_t len = 1024;
 	int read, i = 0;
 	char **tokens;
+	char *path;
 
 	/* Command loop */
 	/* Prompt */
@@ -119,7 +120,8 @@ int shell_loop(char **env)
 		exit(0);
 	}
 	/* compare to "env" command             ???????? */
-	if (!_strcmp(tokens[0], path_finder(env))
+	path = path_finder(env);
+	if (!_strcmp(tokens[0], path)
 	{
 		int j, len = 0;
 
