@@ -98,11 +98,11 @@ int shell_loop(char **env)
 			if (isatty(STDIN_FILENO) != 0)
 				exit(EXIT_SUCCESS);
 			else
-			{
-				perror("Error");
-				exit(EXIT_FAILURE);
+				{
+					perror("Error");
+					exit(EXIT_FAILURE);
+				}
 			}
-		}
 
 	/* change last position for a null byte (because getline doesn't) */
 	if (line[read - 1] == '\n' || line[read - 1] == '\t')
@@ -115,23 +115,23 @@ int shell_loop(char **env)
 
 	/* Compar to "exit" command */
 	if (!_strcmp(tokens[0], ex))
-	{
-		free_tokens(tokens);
-		exit(0);
-	}
+		{
+			free_tokens(tokens);
+			exit(0);
+		}
 	/* compare to "env" command             ???????? */
 	path = path_finder(env);
 	/* split_line(path, "=:"); */
-	if (!_strcmp(tokens[0], path)
+	if (!_strcmp(tokens[0], path))
 		{
 			int j, len = 0;
 
 			for (j = 0; env[j] != NULL; j++)
-			{
-				len = _strlen(env[j]);
-				write(1, env[j], len);
-				write(1, "\n", 1);
-			}
+				{
+					len = _strlen(env[j]);
+					write(1, env[j], len);
+					write(1, "\n", 1);
+				}
 			free(line);
 			shell_loop(env);
 		}
