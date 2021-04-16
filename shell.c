@@ -103,7 +103,7 @@ int shell(char *line, char **split, int lines, char **env, char **av, int *err)
 	if (_strcmp(split[0], "exit"))
 	{
 		arraycleaner(split);
-		free(input);
+		free(line);
 		return (0);
 	}
 	if (_strcmp(split[0], "env"))
