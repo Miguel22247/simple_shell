@@ -31,7 +31,7 @@ char *getenviroment(char *name, char **environ);
 char *getpath(char **environ, char *input);
 
 /* memory_handler.c */
-int arraycleaner(char **fire);
+int arraycleaner(char **str);
 
 
 #endif /* ifndef NARITA_H */

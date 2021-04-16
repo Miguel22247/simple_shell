@@ -2,20 +2,20 @@
 
 /**
  * arraycleaner - Cleans a double pointer
- * @fire: Double pointer to clean (Best name)
+ * @str: Double pointer to clean
  *
  * Return: 1
  */
 
-int arraycleaner(char **fire)
+int arraycleaner(char **str)
 {
 	int i;
 
-	for (i = 0; fire[i]; i++)
+	for (i = 0; str[i]; i++)
 	{
-		free(fire[i]);
+		free(str[i]);
 	}
-	free(fire);
+	free(str);
 
 	return (1);
 }
