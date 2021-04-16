@@ -51,7 +51,7 @@ char *_strdup(char *str)
 }
 
 /**
- * _split - splits a string into a 2d array based on delim
+ * split_line - splits a string into a 2d array based on delim
  * @str: string to split
  * @delim: delimiter to take into account to split the string
  *
