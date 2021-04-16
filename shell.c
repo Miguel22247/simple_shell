@@ -84,7 +84,7 @@ int main(int ac __attribute__((unused)), char **av, char **env)
 
 /**
  * shell - our shell
- * @input: the imput of the user
+ * @line: the imput of the user
  * @split: proccessed input
  * @lines: ammount of lines
  * @env: enviroment variable
