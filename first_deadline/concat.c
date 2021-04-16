@@ -39,7 +39,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	return (ret);
 }
-
+/**
+ * path_finder - finds the path
+ * @env: enviroment
+ * Return:
+ */
 char *path_finder(char **env)
 {
 	int i, j;

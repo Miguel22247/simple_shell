@@ -4,6 +4,7 @@ int execute(char *args[]);
 /**
 * split_line - parser
 * @line: line
+* @delim: delimitator
 * Return: tokens
 */
 char **split_line(char *line, const char *delim)
