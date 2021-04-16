@@ -17,7 +17,7 @@ char *getenviroment(char *name, char **environ)
 		for (j = 0; environ[i][j] == name[j]; j++)
 		{
 		}
-		if (j == n && environ[i][j] == '=')
+		if (j == k && environ[i][j] == '=')
 			return (environ[i]);
 
 	}
