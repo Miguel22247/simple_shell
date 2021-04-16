@@ -57,7 +57,7 @@ int main(int ac __attribute__((unused)), char **av, char **env)
 			break;
 		if (read == 1)
 			continue;
-		input[read - 1] = ' ';
+		line[read - 1] = ' ';
 		splitt = _split(line, " ");
 		if (!*splitt)
 		{
@@ -146,7 +146,7 @@ int shell(char *input, char **split, int lines, char **env, char **av, int *err)
 
 void not_found(int lines, char *split, char **av)
 {
-	char *strlines = numtostr(lines);
+	char *strlines = numbertostring(lines);
 
 	write(2, av[0], _strlen(av[0]));
 	write(2, ": ", 2);
