@@ -102,7 +102,7 @@ int shell(char *input, char **split, int lines, char **env, char **av, int *err)
 
 	if (_strcmp(split[0], "exit"))
 	{
-		array_cleaner(split);
+		arraycleaner(split);
 		free(input);
 		return (0);
 	}
@@ -113,18 +113,18 @@ int shell(char *input, char **split, int lines, char **env, char **av, int *err)
 			write(1, env[i], _strlen(env[i]));
 			write(1, "\n", 1);
 		}
-		return (array_cleaner(split));
+		return (arraycleaner(split));
 	}
 	if (stat(split[0], &st) == 0)
 	{
 		*err = execute(split[0], split, av[0]);
-		return (array_cleaner(split));
+		return (arraycleaner(split));
 	}
 	command = getpath(env, split[0]);
 	if (!command)
 	{
 		*err = 127;
-		error_message(lines, split[0], av);
+		not_found(lines, split[0], av);
 	}
 	else if (execute(command, split, av[0]) == -1)
 	{
@@ -132,7 +132,7 @@ int shell(char *input, char **split, int lines, char **env, char **av, int *err)
 		*err = errno;
 		return (0);
 	}
-	array_cleaner(split);
+	arraycleaner(split);
 	free(command);
 	return (10);
 }

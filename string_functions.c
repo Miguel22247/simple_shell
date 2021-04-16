@@ -133,7 +133,7 @@ int _strcmp(char *origin, char *comp)
  * Return: The ammount of digits
 */
 
-char *numtostr(int n)
+char *numbertostring(int n)
 {
 	int i = 0, j, number = n;
 	char *strnumber;
