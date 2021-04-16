@@ -31,8 +31,10 @@ Every file contains the functions that will be used to work with the main file:
 * shell.c: the main shell file, storage the main functions related to the shell itself
 
 * string_functions.c: storage the string related functions
+
 * path_hand.c: storage the handler 
 
+* mem_handler.c : storage the memory handler function
 ## Bugs
 A lot of bugs yet but works ehm perfectly
 
