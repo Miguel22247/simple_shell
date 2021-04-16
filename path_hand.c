@@ -9,9 +9,9 @@
 
 char *getenviroment(char *name, char **environ)
 {
-	int i, j, n;
+	int i, j, k;
 
-	n = _strlen(name);
+	k = _strlen(name);
 	for (i = 0; environ[i]; i++)
 	{
 		for (j = 0; environ[i][j] == name[j]; j++)

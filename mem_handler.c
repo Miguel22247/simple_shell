@@ -1,7 +1,7 @@
 #include "header.h"
 
 /**
- * arraycleaner - Cleans a double pointer
+ * arraycleaner - Clears a double pointer
  * @str: Double pointer to clean
  *
  * Return: 1
