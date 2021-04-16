@@ -24,7 +24,7 @@ Once executed, the compiled file will bring up a prompt that executes built-in c
 
 
 ## Files
-Every file contains the functions that will be used to work with the main file: 
+Every file contains the functions that will be used to work with the main file:
 
 * shell.h: header file.
 
