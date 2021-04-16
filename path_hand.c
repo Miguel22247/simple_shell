@@ -38,7 +38,7 @@ char *getpath(char **environ, char *input)
 	unsigned int input_len, path_len, i, j, k;
 	struct stat st;
 
-	path = _split(_getenv("PATH", environ), "=:");
+	path = split_line(getenviroment("PATH", environ), "=:");
 	input_len = _strlen(input);
 
 	for (i = 1; path[i]; i++)

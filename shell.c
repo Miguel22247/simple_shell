@@ -58,7 +58,7 @@ int main(int ac __attribute__((unused)), char **av, char **env)
 		if (read == 1)
 			continue;
 		line[read - 1] = ' ';
-		splitt = _split(line, " ");
+		splitt = split_line(line, " ");
 		if (!*splitt)
 		{
 			free(splitt);
@@ -75,7 +75,7 @@ int main(int ac __attribute__((unused)), char **av, char **env)
 		}
 		lines++;
 	}
-	free(input);
+	free(line);
 	error = *error_value;
 	free(error_value);
 	return (error);
