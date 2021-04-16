@@ -58,7 +58,7 @@ char *_strdup(char *str)
  * Return: A double pointer of chars with the string splitted
 */
 
-char **_split(char *str, char *delim)
+char **split_line(char *str, char *delim)
 {
 	int i, j, chars, lines = 1;
 	char **splitted, *token, *strdup;
@@ -127,7 +127,7 @@ int _strcmp(char *origin, char *comp)
 }
 
 /**
- * numtostr - Calculates the ammount of digits
+ * numbertostring - Calculates the ammount of digits
  * @n: number to evaluate
  *
  * Return: The ammount of digits
