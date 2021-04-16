@@ -83,7 +83,7 @@ int main(int ac __attribute__((unused)), char **av, char **env)
 
 
 /**
- * core - the heart of our shell
+ * shell - our shell
  * @input: the imput of the user
  * @split: proccessed input
  * @lines: ammount of lines
@@ -94,7 +94,7 @@ int main(int ac __attribute__((unused)), char **av, char **env)
  * Return: 10 if success, 0 if exit, 1 if continue, -1 if return-1
 */
 
-int shell(char *input, char **split, int lines, char **env, char **av, int *err)
+int shell(char *line, char **split, int lines, char **env, char **av, int *err)
 {
 	char *command;
 	int i;
@@ -138,7 +138,7 @@ int shell(char *input, char **split, int lines, char **env, char **av, int *err)
 }
 
 /**
- * error_message - Prints the error message
+ * not_found - Prints the error message
  * @lines: Ammount of lines so far
  * @split: proccessed input
  * @av: ammount of lines
@@ -158,7 +158,7 @@ void not_found(int lines, char *split, char **av)
 }
 
 /**
- * input_maker - Creates the input variable
+ * line_maker - Creates the input variable
  * @size: Size of the malloc
  *
  * Return: input

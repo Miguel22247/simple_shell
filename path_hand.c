@@ -1,6 +1,6 @@
 #include "header.h"
 /**
- * _getenv - gets the env variable needed
+ * getenviroment - gets the env variable needed
  * @name: name of the env variable
  * @environ: env variables
  *
