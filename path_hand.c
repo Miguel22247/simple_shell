@@ -63,12 +63,12 @@ char *getpath(char **environ, char *input)
 
 		if (stat(command, &st) == 0)
 		{
-			array_cleaner(path);
+			arraycleaner(path);
 			return (command);
 		}
 		free(command);
 	}
-	array_cleaner(path);
+	arraycleaner(path);
 
 	return (NULL);
 }
